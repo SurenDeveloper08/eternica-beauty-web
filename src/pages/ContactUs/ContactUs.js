@@ -54,7 +54,7 @@ const ContactUs = () => {
       }, 5000);
     }
   };
-  
+
   return (
     <div className="contact-page py-5" style={{ background: "linear-gradient(180deg, #FEED9F, #ffffff)" }}>
       <Container>
@@ -82,7 +82,7 @@ const ContactUs = () => {
             {
               icon: <FaEnvelopeOpenText />,
               title: "Email Us",
-              text: "sales@eternicabeauty.com",
+              text: "Sales@eternicabeauty.com",
             },
             {
               icon: <FaMapMarkedAlt />,
