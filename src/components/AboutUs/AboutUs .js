@@ -45,8 +45,8 @@ const AboutUs = () => {
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.7, duration: 0.8 }}
                         >
-                            Eternica Beauty is a wellness and hygiene brand serving the UAE and Middle East with a premium range of products designed to keep life fresh, clean, and balanced. From biodegradable and antibacterial wipes to stylish dispensers and a full collection of essential, carrier, fragrance, and massage oils, our mission is to combine hygiene, sustainability, and wellbeing in every product. With a focus on quality, purity, and modern convenience, Eternica helps create cleaner spaces, healthier routines, and a more eco-conscious lifestyle.
-                        </motion.p>
+                            At Eternica Beauty, we are proud to bring premium Doyen products and a wide range of pure oils to customers across the UAE and Middle East. Our collection includes biodegradable gym wipes, antibacterial gym wipes, and Doyen dispensers, along with carefully sourced carrier oils, essential oils, fragrance oils, and massage oils. With a strong commitment to purity, sustainability, and quality, we aim to enhance everyday wellness while delivering the best value to our customers. Whether for fitness, beauty, or relaxation, Eternica Beauty is your trusted partner for authentic, eco-conscious, and affordable products backed by fast delivery and excellent customer support.
+                               </motion.p>
 
                         {/* <motion.p
                             className="lead mb-0"

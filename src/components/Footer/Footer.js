@@ -100,7 +100,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Description */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -108,7 +108,7 @@ const Footer = () => {
           style={{ maxWidth: "600px", color: "#4C348C" }}
         >
           Eternica Beauty offers premium wipes, dispensers, and wellness oils designed to keep your spaces clean, fresh, and healthy. Serving the UAE and Middle East, we combine quality, sustainability, and modern convenience in every product.
-        </motion.p>
+        </motion.p> */}
 
         {/* Social Icons */}
         <motion.div
