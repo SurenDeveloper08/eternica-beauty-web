@@ -1,0 +1,39 @@
+/* MasonrySection.css */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.masonry-card {
+  background: linear-gradient(135deg, #FEED9F, #FFFFFF);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.masonry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.masonry-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.masonry-content {
+  padding: 15px;
+}
+
+.masonry-content h5 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.masonry-content p {
+  font-size: 0.9rem;
+  color: #333;
+}

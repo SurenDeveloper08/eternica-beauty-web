@@ -1,0 +1,14 @@
+.masonry-gallery {
+  column-count: 2; /* 2 columns */
+  column-gap: 1rem;
+}
+
+.masonry-item {
+  break-inside: avoid;
+}
+
+@media (max-width: 768px) {
+  .masonry-gallery {
+    column-count: 1; /* stack on small screens */
+  }
+}

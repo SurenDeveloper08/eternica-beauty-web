@@ -1,0 +1,31 @@
+.product-card {
+    background: linear-gradient(180deg, #FEED9F, #FFFFFF);
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-img-wrapper {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.product-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin: 0;
+}

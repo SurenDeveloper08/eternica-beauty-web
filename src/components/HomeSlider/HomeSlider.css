@@ -1,0 +1,126 @@
+.homeSlider {
+    padding: 30px 0px;
+}
+
+.home_slider_Main {
+    overflow: hidden;
+    position: relative;
+}
+
+.slick-slider .slick-next {
+    right: 1% !important;
+}
+
+.slick-slider .slick-prev {
+    left: 1% !important;
+}
+
+.slick-arrow {
+    background: #f2f3f4 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+    height: 40px !important;
+    width: 40px !important;
+    position: absolute;
+    top: 50%;
+    /* Vertically center */
+    transform: translateY(-50%);
+    /* Perfect vertical centering */
+    transition: all .2s ease-in-out;
+    z-index: 100 !important;
+}
+
+
+.slick-prev:before {
+    content: "\f104" !important;
+    color: #000 !important;
+    font-family: FontAwesome !important;
+    font-size: 30px !important;
+}
+
+.slick-next:before {
+    content: "\f105" !important;
+    color: #000 !important;
+    font-family: FontAwesome !important;
+    font-size: 30px !important;
+}
+
+.slick-arrow:hover {
+    background: #4C348C !important;
+}
+
+.slick-arrow:hover:before {
+    color: #fff !important;
+}
+
+.slick-slider .slick-list {
+    transform: translate3d(0, 0, 0);
+    /* padding: 0px 0px 20px; */
+}
+
+
+.slick-slide img {
+    display: block;
+    /* border-radius: 15px; */
+}
+
+.home_slider_Main .slick-dots {
+    bottom: 40px !important;
+    position: absolute;
+}
+
+.slick-dots li button {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.cat_slider_Main .slick-dots {
+    display: none !important;
+}
+
+@media only screen and (max-width: 576px) {
+    .homeSlider {
+        padding: 0px;
+    }
+
+    .slick-arrow {
+        height: 20px !important;
+        width: 20px !important;
+    }
+
+    .slick-arrow:before {
+        font-size: 15px !important;
+    }
+
+    .home_slider_Main .slick-dots {
+        bottom: 30px !important;
+    }
+}
+
+.slide-wrapper {
+  position: relative;
+}
+
+/* Desktop (default) */
+.slide-button {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .slide-button {
+    bottom: 10px; /* adjust as needed */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .slide-button {
+    bottom: 10px; /* adjust as needed */
+  }
+}
+
