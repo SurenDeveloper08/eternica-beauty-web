@@ -1,9 +1,9 @@
 import React from 'react'
 import HomeSlider from '../../components/HomeSlider/HomeSlider'
-import CatSlider from '../../components/catSlider/catSlider'
-import AboutUs from '../../components/AboutUs/AboutUs '
+// import CatSlider from '../../components/catSlider/catSlider'
+// import AboutUs from '../../components/AboutUs/AboutUs '
 import HomeProducts from '../../components/HomeProducts/HomeProducts'
-import MasonrySection from '../../components/CategoryShowcase/CategoryShowcase'
+// import MasonrySection from '../../components/CategoryShowcase/CategoryShowcase'
 import FeatureCard from '../../components/FeatureCard/FeatureCard'
 import PureOil from '../../assets/Feature/water.png'
 import BestPrice from '../../assets/Feature/sale.png'
@@ -199,18 +199,18 @@ const Home = () => {
             <section className='container pt-3'>
                 <HomeSlider />
             </section>
-            <section className='container py-5'>
+            {/* <section className='container py-5'>
                 <CatSlider title={'Explore Our Categories'} category={category} />
-            </section>
-            <section className='container py-5' id='about-us'>
+            </section> */}
+            {/* <section className='container py-5' id='about-us'>
                 <AboutUs />
-            </section>
-            <section className='container py-5'>
+            </section> */}
+           <section className='container py-5'>
                 <HomeProducts title={'Trending Products'} products={sampleProducts} />
             </section>
-            <section className='container py-5'>
+            {/* <section className='container py-5'>
                 <MasonrySection />
-            </section>
+            </section> */}
             <section className='container py-5'>
                 <HomeProducts title={'Customer Favorites'} products={sampleProducts} />
             </section>
@@ -221,4 +221,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home 
