@@ -53,7 +53,6 @@ const CategorySection = () => {
             >
               {!cat.reverse ? (
                 <>
-                  {/* Text Column */}
                   <Col
                     md={6}
                     className="d-flex flex-column justify-content-center p-5 text-start"
@@ -83,7 +82,7 @@ const CategorySection = () => {
                     </motion.div>
                   </Col>
 
-                  {/* Image Column */}
+
                   <Col md={6} className="d-flex justify-content-center align-items-center p-0" style={{ background: "#FEED9F" }}>
                     <motion.img
                       src={cat.img}
@@ -97,7 +96,7 @@ const CategorySection = () => {
                 </>
               ) : (
                 <>
-                  {/* Image Column */}
+   
                   <Col md={6} className="p-0 d-flex" style={{ background: "#FEED9F" }}>
                     <motion.img
                       src={cat.img}
@@ -109,7 +108,7 @@ const CategorySection = () => {
                     />
                   </Col>
 
-                  {/* Text Column */}
+          
                   <Col
                     md={6}
                     className="d-flex flex-column justify-content-center p-5 text-end"

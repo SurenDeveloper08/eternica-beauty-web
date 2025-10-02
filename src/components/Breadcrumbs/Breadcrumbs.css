@@ -6,9 +6,7 @@
 
 .breadcrumb ol {
   list-style: none;
-  /* remove default numbering */
   display: flex;
-  /* horizontal layout */
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -21,7 +19,6 @@
 
 .breadcrumb li+li::before {
   content: "›";
-  /* separator */
   margin: 0 8px;
   color: #6c757d;
 }

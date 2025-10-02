@@ -21,7 +21,6 @@ const products = [
 const ProductListing = () => {
   return (
     <div className="product-listing-page">
-      {/* Top Banner Section */}
       <div className="banner-section">
         <div className="banner-content text-center">
           <h2 className="page-title">Essential Oils</h2>
@@ -37,7 +36,6 @@ const ProductListing = () => {
         />
       </div>
 
-      {/* Product Grid */}
       <div className="container my-5">
         <Breadcrumbs/>
         <div className="product-grid">

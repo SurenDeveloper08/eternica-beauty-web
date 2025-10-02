@@ -107,15 +107,9 @@ const Product = () => {
         <div className="container">
             <Breadcrumbs/>
             <div className="product-page container">
-                {/* Left: Gallery */}
+
                 <div className="gallery-section">
                     <div className="main-image-wrapper">
-                        {/* <img
-                        key={selectedImage}
-                        src={selectedImage}
-                        alt={product.name}
-                        className="main-image fade-in"
-                    /> */}
                         <ImageZoom src={selectedImage} alt={product.name} />
                     </div>
 
@@ -132,7 +126,7 @@ const Product = () => {
                     </div>
                 </div>
 
-                {/* Right: Info */}
+   
                 <div className="info-section">
                     <h2 className="product-title">{product.name}</h2>
                     <p className="product-desc">{product.description}</p>

@@ -71,6 +71,6 @@ h6 {
 .slick-prev-arrow.slick-disabled,
 .slick-next-arrow.slick-disabled {
   opacity: 0.5;
-  pointer-events: none; /* prevent clicking */
+  pointer-events: none;
   box-shadow: none;
 }

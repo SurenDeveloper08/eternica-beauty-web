@@ -1,4 +1,4 @@
-/* FeatureCard.css */
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -15,7 +15,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: #FEED9F; /* gradient or solid color */
+  background: #FEED9F;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,12 +39,11 @@
   font-size: 0.95rem;
 }
 
-/* First card -> left */
+
 .feature-grid > div:first-child .feature-card {
   justify-self: start;
 }
 
-/* Last card -> right */
 .feature-grid > div:last-child .feature-card {
   justify-self: end;
 }

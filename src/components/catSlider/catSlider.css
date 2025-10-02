@@ -9,20 +9,17 @@
 
 .category-img-wrapper {
     width: 180px;
-    /* you can set 150–200px depending on design */
     height: 180px;
     border-radius: 50%;
     overflow: hidden;
     background: radial-gradient(circle at center,
-            /* center of element */
+
             #FFFFFF 0%,
-            /* bright white at center */
+
             #FEED9F 75px,
-            /* fade to yellow */
             #FEED9F 100%
-            /* edges stay yellow */
         );
-    /* fallback background */
+ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,7 +29,7 @@
     width: 150px;
     height: auto;
     object-fit: cover;
-    /* auto fit image inside circle */
+
 }
 
 .category-title {

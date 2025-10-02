@@ -35,13 +35,12 @@
   color: #37266b;
 } */
 
-/* Logo */
+
 .footer-logo {
   max-width: 150px;
   margin-bottom: 15px;
 }
 
-/* Subscribe */
 .subscribe-form {
   display: flex;
   margin-top: 10px;
@@ -63,7 +62,6 @@
   background: #37266b;
 }
 
-/* Social Icons */
  .footer-social {
   margin-top: 15px;
 }
@@ -77,13 +75,12 @@
   color: #37266b;
 }
 
-/* Bottom */
 .footer-bs p {
   margin-bottom: 0;
   font-size: 13px;
 } 
 
-/* Responsive */
+
  @media (max-width: 768px) {
   .footer-bs {
     text-align: center;
@@ -91,7 +88,7 @@
   }
 }
 
-/* Subscribe */
+
 .subscribe-form {
   position: relative;
   width: 100%;
@@ -126,15 +123,15 @@
 }
 
 .footer-logo {
-  max-width: 150px; /* adjusts logo size */
+  max-width: 150px; 
   height: auto;
   display: block;
-  margin: 0 auto; /* center on mobile */
+  margin: 0 auto;
 }
 
 @media(min-width: 768px) {
   .footer-logo {
-    margin: 0; /* left align on desktop */
+    margin: 0;
   }
 }
 

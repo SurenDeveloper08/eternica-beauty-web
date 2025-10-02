@@ -67,8 +67,7 @@ const CategoryShowcaseCreative = () => {
       {categories && categories.map((cat, catIdx) => {
         return (
           <div key={catIdx} className="mb-5">
-            {/* Category Header */}
-            <motion.div
+             <motion.div
               className="text-center mb-5"
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -77,15 +76,12 @@ const CategoryShowcaseCreative = () => {
               <h2 style={{ color: "#4C348C", fontWeight: "700" }}>{cat.title}</h2>
               <p className="text-muted mx-auto" style={{ maxWidth: "700px" }}>{cat.about}</p>
             </motion.div>
-
-            {/* Subcategories */}
-            <Row className="justify-content-center g-0" style={{ borderRadius: "0.325px" }}>
+  <Row className="justify-content-center g-0" style={{ borderRadius: "0.325px" }}>
               {cat.subcategories.map((sub, subIdx) => {
-                // Find row number (0-based)
               
                 let borderRadius = "0px";
                 let bgColor = "#FEED9F";
-                let textColor = "#000"; // default text color
+                let textColor = "#000"; 
                 let p;
                 if (isMobile) {
                   // Mobile: top-left + bottom-right rounded
@@ -140,7 +136,6 @@ const CategoryShowcaseCreative = () => {
                         borderRadius
                       }}
                     >
-                      {/* Small decorative image */}
                       <motion.img
                         src={sub.image}
                         alt={sub.title}
@@ -149,7 +144,6 @@ const CategoryShowcaseCreative = () => {
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       />
-                      {/* Text */}
                       <div>
                         <h5 style={{ color: textColor, fontWeight: "600" }}>{sub.title}</h5>
                         <p style={{ color: p }}>{sub.about}</p>

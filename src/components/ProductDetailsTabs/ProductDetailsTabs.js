@@ -6,7 +6,6 @@ const ProductDetailsTabs = ({ description, specifications }) => {
 
   return (
     <div className="my-5">
-      {/* Tab Headers */}
       <div className="d-flex justify-content-center border-bottom mb-3">
         {[
           { key: "description", label: "Description" },
@@ -27,8 +26,7 @@ const ProductDetailsTabs = ({ description, specifications }) => {
         ))}
       </div>
 
-      {/* Tab Content */}
-      <motion.div
+     <motion.div
         key={activeTab}
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}

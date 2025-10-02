@@ -18,7 +18,6 @@ const WebsiteRoutes = () => {
         <>
             <Header />
             <Routes>
-                {/* Home page */}
                 <Route index element={<Home />} />
                 <Route path=":category" element={<ProductListing />} />
                 <Route path=":category/:subCategory" element={<ProductListing />} />

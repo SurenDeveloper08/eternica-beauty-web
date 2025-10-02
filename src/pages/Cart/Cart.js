@@ -31,7 +31,6 @@ const Cart = () => {
         <div className="container py-5">
             <h2 className="fw-bold mb-4 text-center">Your Cart</h2>
 
-            {/* Cart Items */}
             <AnimatePresence>
                 {cartItems.length > 0 ? (
                     cartItems.map((item) => (
@@ -43,22 +42,17 @@ const Cart = () => {
                             transition={{ duration: 0.3 }}
                             className="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 mb-3 border rounded bg-white"
                         >
-                            {/* Image */}
-                            <img
+                             <img
                                 src={item.image}
                                 alt={item.name}
                                 className="rounded mb-2 mb-md-0"
                                 style={{ width: "80px", height: "80px", objectFit: "cover" }}
                             />
 
-                            {/* Name + Price */}
                             <div className="text-center text-md-start flex-fill px-md-3">
                                 <h6 className="fw-semibold">{item.name}</h6>
-                                {/* <p className="text-muted mb-0">${item.price.toFixed(2)}</p> */}
                             </div>
-
-                            {/* Remove */}
-                            <button
+       <button
                                 className="btn btn-sm btn-outline-danger"
                                 onClick={() => handleRemove(item.id)}
                             >
@@ -76,17 +70,14 @@ const Cart = () => {
                     </motion.p>
                 )}
             </AnimatePresence>
-
-            {/* Cart Total */}
-            {cartItems.length > 0 && (
+  {cartItems.length > 0 && (
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4 }}
                     className="d-flex flex-column align-items-end mt-4"
                 >
-                    {/* <h5 className="fw-bold">Total: ${total.toFixed(2)}</h5> */}
-                    <button className="btn btn-lg mt-3 px-4 text-white" style={{ background: "#4C348C",borderRadius:"0.325rem" }} onClick={() => navigate("/checkout")}>
+                     <button className="btn btn-lg mt-3 px-4 text-white" style={{ background: "#4C348C",borderRadius:"0.325rem" }} onClick={() => navigate("/checkout")}>
                         Proceed to Checkout
                     </button>
                 </motion.div>

@@ -12,8 +12,7 @@ const Nav = () => {
         <nav className="navbar navbar-expand py-2" style={{ background: '#4C348C' }}>
             <div className="container d-flex justify-content-between align-items-center">
 
-                {/* Left: Email & Phone */}
-                <div className="d-flex flex-column flex-md-row">
+               <div className="d-flex flex-column flex-md-row">
                     <div className="d-flex align-items-center me-md-4 mb-1 mb-md-0">
                         <EmailIcon fontSize="small" className="me-1 text-light" />
                         <a className="text-light text-decoration-none" href="mailto:support@example.com">
@@ -32,8 +31,7 @@ const Nav = () => {
                     <SearchBar width={'400px'} />
                 </div>
 
-                {/* Right: Social Media */}
-                <div className="d-flex align-items-center">
+               <div className="d-flex align-items-center">
                     <a href="#" className="text-light me-3"><FacebookIcon fontSize="small" /></a>
                     <a href="#" className="text-light me-3"><TwitterIcon fontSize="small" /></a>
                     <a href="#" className="text-light me-3"><InstagramIcon fontSize="small" /></a>

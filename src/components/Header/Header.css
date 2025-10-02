@@ -32,27 +32,25 @@
     font-size:12px;
 }
 
-/* Default (desktop) */
 .header-logo {
     display: flex;
     align-items: center;
 }
 
-/* Remove default blue hover */
 .dropdown-menu .dropdown-item:focus,
 .dropdown-menu .dropdown-item:hover {
   background-color: #4C348C !important;
-  color: #fff !important; /* white text on hover */
+  color: #fff !important; 
 }
 
-/* Keep normal state clean */
+
 .dropdown-menu .dropdown-item {
-  color: #000; /* black text normally */
+  color: #000; 
 }
 
-/* Mobile view */
+
 @media (max-width: 768px) {
     .header-logo {
-        justify-content: center; /* centers the logo horizontally */
+        justify-content: center; 
     }
 }

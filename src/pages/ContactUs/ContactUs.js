@@ -59,8 +59,7 @@ const ContactUs = () => {
     <div className="contact-page py-5"
     >
       <Container>
-        {/* Title */}
-        <motion.div
+       <motion.div
           className="text-center mb-5"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,8 +71,7 @@ const ContactUs = () => {
           <p className="text-muted">We’d love to hear from you. Reach out to us anytime.</p>
         </motion.div>
 
-        {/* Info Cards */}
-        <Row className="mb-5 text-center g-4">
+         <Row className="mb-5 text-center g-4">
           {[
             {
               icon: <FaPhoneAlt />,
@@ -123,7 +121,6 @@ const ContactUs = () => {
           ))}
         </Row>
 
-        {/* Contact Form */}
         <Row>
           <Col className="mx-auto">
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>

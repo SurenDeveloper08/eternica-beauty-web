@@ -28,7 +28,6 @@ const HomeProducts = ({ title, products }) => {
 
     return (
         <>
-            {/* Header with title + custom buttons */}
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <h4 className="fw-bold">{title}</h4>
                 <div className="d-flex">

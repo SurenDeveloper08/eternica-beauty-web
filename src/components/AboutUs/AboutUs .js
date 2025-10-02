@@ -6,7 +6,6 @@ const AboutUs = () => {
     return (
         <>
             <div className="row align-items-center gx-4">
-                {/* Text Column */}
                 <div className="col-md-6">
                     <motion.div
                         className="ms-md-2"
@@ -43,20 +42,11 @@ const AboutUs = () => {
                             At Eternica Beauty, we are proud to bring premium Doyen products and a wide range of pure oils to customers across the UAE and Middle East. Our collection includes biodegradable gym wipes, antibacterial gym wipes, and Doyen dispensers, along with carefully sourced carrier oils, essential oils, fragrance oils, and massage oils. With a strong commitment to purity, sustainability, and quality, we aim to enhance everyday wellness while delivering the best value to our customers. Whether for fitness, beauty, or relaxation, Eternica Beauty is your trusted partner for authentic, eco-conscious, and affordable products backed by fast delivery and excellent customer support.
                         </motion.p>
 
-                        {/* <motion.p
-                            className="lead mb-0"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ delay: 0.9, duration: 0.8 }}
-                        >
-                            Our mission is to bring luxurious self-care experiences to every
-                            home, combining tradition with modern wellness trends.
-                        </motion.p> */}
+                    
                     </motion.div>
                 </div>
 
-                {/* Image Column */}
-                <div className="col-md-5 offset-md-1">
+               <div className="col-md-5 offset-md-1">
                     <motion.div
                         className="ms-md-2 ms-lg-5"
                         initial={{ opacity: 0, scale: 0.9, rotate: -5 }}

@@ -24,8 +24,7 @@ const WhatsAppButton = () => {
                 zIndex: 9999,
             }}
         >
-            {/* WhatsApp SVG Icon */}
-            <svg
+           <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="white"
                 viewBox="0 0 32 32"

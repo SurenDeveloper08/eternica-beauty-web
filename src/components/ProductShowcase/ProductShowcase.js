@@ -71,8 +71,7 @@ const ProductShowcase = () => {
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
                 whileHover={{ scale: 1.05 }}
               >
-                {/* Product Image with Hover */}
-                <div
+                  <div
                   className="position-relative"
                   style={{ height: "250px", overflow: "hidden" }}
                 >
@@ -91,8 +90,7 @@ const ProductShowcase = () => {
                   />
                 </div>
 
-                {/* Card Body with animated tagline */}
-                <motion.div
+                 <motion.div
                   className="card-body text-center"
                   whileHover={{ y: -5 }}
                   transition={{ duration: 0.3 }}
