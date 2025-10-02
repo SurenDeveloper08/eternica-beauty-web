@@ -84,7 +84,7 @@ const CategoryShowcaseCreative = () => {
                 // Find row number (0-based)
               
                 let borderRadius = "0px";
-                let bgColor;
+                let bgColor = "#FEED9F";
                 let textColor = "#000"; // default text color
                 let p;
                 if (isMobile) {

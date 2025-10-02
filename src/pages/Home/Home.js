@@ -208,9 +208,9 @@ const Home = () => {
             <section className='container py-5'>
                 <HomeProducts title={'Trending Products'} products={sampleProducts} />
             </section>
-            {/* <section className='container py-5'>
+            <section className='container py-5'>
                 <MasonrySection />
-            </section> */}
+            </section>
             <section className='container py-5'>
                 <HomeProducts title={'Customer Favorites'} products={sampleProducts} />
             </section>

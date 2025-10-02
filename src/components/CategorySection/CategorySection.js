@@ -48,7 +48,7 @@ const CategorySection = () => {
                 borderTopRightRadius: isFirst ? "0.325rem" : "0",
                 borderBottomLeftRadius: isLast ? "0.325rem" : "0",
                 borderBottomRightRadius: isLast ? "0.325rem" : "0",
-                overflow: "hidden" // ensures images/text don’t bleed outside radius
+                overflow: "hidden" 
               }}
             >
               {!cat.reverse ? (

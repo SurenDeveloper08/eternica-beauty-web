@@ -48,3 +48,20 @@
     font-size: 0.85rem;
   }
 }
+
+
+.gradient-1 {
+  background: linear-gradient(to right bottom, #FEED9F, #FFFFFF);
+}
+
+.gradient-2 {
+  background: linear-gradient(to left bottom, #917bcd, #FFFFFF);
+}
+
+.gradient-3 {
+  background: linear-gradient(to right top, #917bcd, #FFFFFF);
+}
+
+.gradient-4 {
+  background: linear-gradient(to left top, #FEED9F, #FFFFFF);
+}

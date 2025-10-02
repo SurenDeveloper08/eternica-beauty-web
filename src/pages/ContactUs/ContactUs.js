@@ -57,7 +57,6 @@ const ContactUs = () => {
 
   return (
     <div className="contact-page py-5"
-    // style={{ background: "linear-gradient(180deg, #FEED9F, #ffffff)" }}
     >
       <Container>
         {/* Title */}
