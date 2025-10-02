@@ -6,7 +6,6 @@ import ImageZoom from "../../components/ImageZoom/ImageZoom";
 import Oil from '../../assets/oil.png'
 import ProductDetailsTabs from "../../components/ProductDetailsTabs/ProductDetailsTabs";
 import HomeProducts from "../../components/HomeProducts/HomeProducts";
-import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 const product = {
     id: "p1",
     name: "Gym Wipes",
@@ -105,7 +104,6 @@ const Product = () => {
 
     return (
         <div className="container">
-            <Breadcrumbs/>
             <div className="product-page container">
 
                 <div className="gallery-section">
