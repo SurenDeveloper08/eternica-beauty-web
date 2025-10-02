@@ -38,3 +38,13 @@
   font-weight: 500;
   font-size: 0.95rem;
 }
+
+/* First card -> left */
+.feature-grid > div:first-child .feature-card {
+  justify-self: start;
+}
+
+/* Last card -> right */
+.feature-grid > div:last-child .feature-card {
+  justify-self: end;
+}

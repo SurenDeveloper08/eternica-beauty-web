@@ -9,6 +9,8 @@ import './Header.css'; // optional custom styles
 import Logo from '../../assets/LOGO.png'
 import SearchBar from "../SearchBar/SearchBar";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Header = ({ width }) => {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,7 +28,7 @@ const Header = ({ width }) => {
         <header className="section-header border-bottom">
 
             {/* Top Info Bar */}
-            {/* <Nav /> */}
+            <Nav />
             {/* menu bar desktop */}
             <div className="bg-white border-bottom py-2">
                 <div className="container d-flex align-items-center justify-content-between">
@@ -41,33 +43,62 @@ const Header = ({ width }) => {
                     {/* Center: Navigation */}
                     <nav className="d-none d-md-flex">
                         <ul className="nav">
-                            {/* <li className="nav-item">
-                                <a href="/Carrier-Oils-and-Base-Oils" className="nav-link px-3 text-dark fw-bold">Carrier & Base Oils</a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="/Essential-Oil" className="nav-link px-3 text-dark fw-bold">Essential Oil</a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="/Fragrance-Oil" className="nav-link px-3 text-dark fw-bold">Fragrance Oil</a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="/Masage-Oil" className="nav-link px-3 text-dark fw-bold">Masage Oil</a>
-                            </li> */}
-                            <li className="nav-item">
-                                <a href="#about-us" className="nav-link px-3 text-dark fw-bold">About Us</a>
-                            </li>
-                            {/* <li className="nav-item">
-                                <a href="#products" className="nav-link px-3 text-dark fw-bold">Our Products</a>
-                            </li> */}
-                            <li className="nav-item">
-                                <a href="#contact-us" className="nav-link px-3 text-dark fw-bold">Contact Us</a>
+
+                            {/* Dropdown for Products */}
+                            <li className="nav-item dropdown">
+                                <a
+                                    // href="products"
+                                    className="nav-link px-3 text-dark fw-bold dropdown-toggle"
+                                    id="navbarDropdown"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style={{ textDecoration: "none" }}
+                                >
+                                    Our Products
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a className="dropdown-item" href="/Carrier-Oils-and-Base-Oils">
+                                            Carrier & Base Oils
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a className="dropdown-item" href="/Essential-Oil">
+                                            Essential Oils
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a className="dropdown-item" href="/Fragrance-Oil">
+                                            Fragrance Oils
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a className="dropdown-item" href="/Massage-Oil">
+                                            Massage Oils
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a className="dropdown-item" href="/Gym-Wipes">
+                                            Wipes & Dispensers
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
 
+                            <li className="nav-item">
+                                <a href="contact" className="nav-link px-3 text-dark fw-bold">Contact Us</a>
+                            </li>
+
+                            <li className="nav-item">
+                                <a href="about" className="nav-link px-3 text-dark fw-bold">About Us</a>
+                            </li>
                         </ul>
                     </nav>
 
+
                     {/* Right: Search & Cart */}
-                    {/* <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center">
                         <a href="/cart" className="text-dark position-relative" aria-label="View cart">
                             <ShoppingBagIcon fontSize="large" />
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -75,7 +106,7 @@ const Header = ({ width }) => {
                                 <span className="visually-hidden">items in cart</span>
                             </span>
                         </a>
-                    </div> */}
+                    </div>
                 </div>
             </div>
             {/* <AppBar

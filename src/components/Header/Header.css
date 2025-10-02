@@ -38,6 +38,18 @@
     align-items: center;
 }
 
+/* Remove default blue hover */
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:hover {
+  background-color: #4C348C !important;
+  color: #fff !important; /* white text on hover */
+}
+
+/* Keep normal state clean */
+.dropdown-menu .dropdown-item {
+  color: #000; /* black text normally */
+}
+
 /* Mobile view */
 @media (max-width: 768px) {
     .header-logo {

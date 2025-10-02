@@ -1,50 +1,42 @@
-.category-box {
-    padding: 0.75rem;
-    border: 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    background: #fff;
-    border-radius: 8px;
+.category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
 }
 
 .category-img-wrapper {
-    width: 100px;
-    height: 100px;
-    padding: 6px;
+    width: 180px;
+    /* you can set 150–200px depending on design */
+    height: 180px;
     border-radius: 50%;
-    background: #FEED9F;
-    margin: 0 auto 8px;
+    overflow: hidden;
+    background: radial-gradient(circle at center,
+            /* center of element */
+            #FFFFFF 0%,
+            /* bright white at center */
+            #FEED9F 75px,
+            /* fade to yellow */
+            #FEED9F 100%
+            /* edges stay yellow */
+        );
+    /* fallback background */
     display: flex;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    justify-content: center;
 }
 
-@media (max-width: 576px) {
-    .category-img-wrapper {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .category-img-wrapper {
-       width: 150px;
-        height: 150px;
-    }
-}
-
-.category-img-wrapper img {
-    width: auto;
-    height: 100%;
+.category-img {
+    width: 150px;
+    height: auto;
     object-fit: cover;
+    /* auto fit image inside circle */
 }
 
-.category-item {
-  min-height: 170px; /* image + 2 lines of title */
-}
-
-/* Optional: adjust slide spacing */
-.category-slider .slick-slide {
-    padding: 0 0.5rem;
+.category-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4C348C;
 }

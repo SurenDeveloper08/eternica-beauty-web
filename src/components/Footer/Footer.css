@@ -1,4 +1,4 @@
-/* .footer-bs {
+.footer-bs {
   background-color: #fff;
   padding: 60px 40px;
   color: #4C348C;
@@ -36,13 +36,13 @@
 } */
 
 /* Logo */
-/* .footer-logo {
+.footer-logo {
   max-width: 150px;
   margin-bottom: 15px;
-} */
+}
 
 /* Subscribe */
-/* .subscribe-form {
+.subscribe-form {
   display: flex;
   margin-top: 10px;
 }
@@ -61,10 +61,10 @@
 }
 .subscribe-form .btn:hover {
   background: #37266b;
-} */
+}
 
 /* Social Icons */
-/* .footer-social {
+ .footer-social {
   margin-top: 15px;
 }
 .footer-social a {
@@ -75,24 +75,24 @@
 }
 .footer-social a:hover {
   color: #37266b;
-} */
+}
 
 /* Bottom */
-/* .footer-bs p {
+.footer-bs p {
   margin-bottom: 0;
   font-size: 13px;
-} */
+} 
 
 /* Responsive */
-/* @media (max-width: 768px) {
+ @media (max-width: 768px) {
   .footer-bs {
     text-align: center;
     padding: 40px 20px;
   }
-} */
+}
 
 /* Subscribe */
-/* .subscribe-form {
+.subscribe-form {
   position: relative;
   width: 100%;
   margin-top: 10px;
@@ -123,26 +123,30 @@
 
 .subscribe-form .btn:hover {
   background: #37266b;
-} */
-
-
-.footer-logo {
-  display: block;
-  margin: 0 auto;        /* Center horizontally */
-  max-width: 140px;      /* Restrict size */
-  width: 100%;           /* Responsive */
-  height: auto;          /* Keep aspect ratio */
-  object-fit: contain;   /* Prevent cropping */
 }
 
-@media (max-width: 768px) {
+.footer-logo {
+  max-width: 150px; /* adjusts logo size */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* center on mobile */
+}
+
+@media(min-width: 768px) {
   .footer-logo {
-    max-width: 130px; /* Slightly smaller on tablets */
+    margin: 0; /* left align on desktop */
   }
 }
 
-@media (max-width: 480px) {
-  .footer-logo {
-    max-width:100px; /* Even smaller on mobile */
+.footer-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  text-align: center;
+}
+
+@media(min-width: 768px) {
+  .footer-description {
+    text-align: left;
   }
 }

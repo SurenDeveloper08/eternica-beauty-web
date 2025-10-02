@@ -1,11 +1,9 @@
 import React from 'react'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
 import HomeSlider from '../../components/HomeSlider/HomeSlider'
 import CatSlider from '../../components/catSlider/catSlider'
 import AboutUs from '../../components/AboutUs/AboutUs '
 import HomeProducts from '../../components/HomeProducts/HomeProducts'
-import MasonrySection from '../../components/MasonrySection/MasonrySection'
+import MasonrySection from '../../components/CategoryShowcase/CategoryShowcase'
 import FeatureCard from '../../components/FeatureCard/FeatureCard'
 import PureOil from '../../assets/Feature/water.png'
 import BestPrice from '../../assets/Feature/sale.png'
@@ -13,8 +11,9 @@ import Shipping from '../../assets/Feature/delivery.png'
 import Support from '../../assets/Feature/customer-support.png'
 import CarrierOil from '../../assets/carrieroil.png'
 import Oil from '../../assets/oil.png'
-import ContactUs from '../ContactUs/ContactUs'
-import ProductShowcase from '../../components/ProductShowcase/ProductShowcase'
+import Wipes1 from '../../assets/black.png'
+import Wipes2 from '../../assets/blue.png'
+import Dispenser from '../../assets/Dispenser.png'
 const Home = () => {
 
     const sampleProducts = [
@@ -29,7 +28,7 @@ const Home = () => {
             price: 45,
             productCurrency: "AED",
             stock: 12,
-            image: Oil,
+            image: Wipes1,
         },
         {
             _id: "p2",
@@ -55,7 +54,7 @@ const Home = () => {
             price: 99,
             productCurrency: "AED",
             stock: 0, // out of stock
-            image: Oil,
+            image: Dispenser,
         },
         {
             _id: "p3",
@@ -68,7 +67,7 @@ const Home = () => {
             price: 99,
             productCurrency: "AED",
             stock: 0, // out of stock
-            image: Oil,
+            image: Wipes2,
         },
         {
             _id: "p3",
@@ -81,7 +80,7 @@ const Home = () => {
             price: 99,
             productCurrency: "AED",
             stock: 0, // out of stock
-            image: Oil,
+            image: Dispenser,
         },
         {
             _id: "p3",
@@ -129,29 +128,43 @@ const Home = () => {
     const category = [
         {
             id: 1,
-            name: "Carrier & Base Oils",
+            name: "Massage Oils",
             category: "Oils",
             subCategory: [],
             imageUrl: "https://api.spastore.me/uploads/topCategory/pedicure%20bowls.png"
         },
         {
             id: 2,
-            name: "Essential Oil",
+            name: "Essential Oils",
             category: "Oils",
             subCategory: [],
             imageUrl: "https://api.spastore.me/uploads/topCategory/pedicure%20bowls.png"
         },
         {
             id: 3,
-            name: "Fragrance Oil",
+            name: "Carrier & Base Oils",
             category: "Oils",
             subCategory: [],
             imageUrl: "https://api.spastore.me/uploads/topCategory/pedicure%20bowls.png"
         },
         {
             id: 4,
-            name: "Massage Oil",
+            name: "Fragrance Oils",
             category: "Oils",
+            subCategory: [],
+            imageUrl: "https://api.spastore.me/uploads/topCategory/pedicure%20bowls.png"
+        },
+        {
+            id: 5,
+            name: "Gym Wipes",
+            category: "Doyen",
+            subCategory: [],
+            imageUrl: "https://api.spastore.me/uploads/topCategory/pedicure%20bowls.png"
+        },
+        {
+            id: 6,
+            name: "Dispensers",
+            category: "Doyen",
             subCategory: [],
             imageUrl: "https://api.spastore.me/uploads/topCategory/pedicure%20bowls.png"
         },
@@ -161,7 +174,7 @@ const Home = () => {
     const features = [
         {
             id: 1,
-            title: '100% Pure Oils',
+            title: 'Premium Quality',
             image: PureOil,
         },
         {
@@ -181,33 +194,28 @@ const Home = () => {
         },
     ];
 
-
     return (
         <>
-            {/* <HomeSlider /> */}
-            {/* <section className='container py-5'>
-                <CatSlider title={'Explore Our Oils'} category={category} />
-            </section> */}
-            <section className='container' id='about-us'>
+            <section className='container pt-3'>
+                <HomeSlider />
+            </section>
+            <section className='container py-5'>
+                <CatSlider title={'Explore Our Categories'} category={category} />
+            </section>
+            <section className='container py-5' id='about-us'>
                 <AboutUs />
             </section>
-            {/* <section className='container py-5' id='products'>
-                <ProductShowcase />
-            </section> */}
-            {/* <section className='container py-5'>
+            <section className='container py-5'>
                 <HomeProducts title={'Trending Products'} products={sampleProducts} />
-            </section>*/}
-            {/* <section className='container py-5'>
-                <MasonrySection title={'Our Products'} categories={categories} />
-            </section> */}
-            {/*  <section className='container py-5'>
+            </section>
+            <section className='container py-5'>
+                <MasonrySection />
+            </section>
+            <section className='container py-5'>
                 <HomeProducts title={'Customer Favorites'} products={sampleProducts} />
             </section>
             <section className='container py-5'>
                 <FeatureCard features={features} />
-            </section> */}
-            <section id='contact-us'>
-                <ContactUs />
             </section>
         </>
     )

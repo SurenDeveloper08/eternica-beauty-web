@@ -56,7 +56,9 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-page py-5" style={{ background: "linear-gradient(180deg, #FEED9F, #ffffff)" }}>
+    <div className="contact-page py-5"
+    // style={{ background: "linear-gradient(180deg, #FEED9F, #ffffff)" }}
+    >
       <Container>
         {/* Title */}
         <motion.div
@@ -126,7 +128,7 @@ const ContactUs = () => {
         <Row>
           <Col className="mx-auto">
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>
-              <Card className="p-5 shadow-lg border-0 rounded-3">
+              <Card className="p-5 border-0" style={{ borderRadius: '0.325rem' }}>
                 <Form onSubmit={handleSubmit}>
                   <Row>
                     <Col md={6}>
@@ -139,6 +141,7 @@ const ContactUs = () => {
                           value={formData.name}
                           onChange={handleChange}
                           required
+                          style={{ borderColor: "#4C348C" }}
                         />
                       </Form.Group>
                     </Col>
@@ -152,6 +155,7 @@ const ContactUs = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
+                          style={{ borderColor: "#4C348C" }}
                         />
                       </Form.Group>
                     </Col>
@@ -166,6 +170,7 @@ const ContactUs = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
+                      style={{ borderColor: "#4C348C" }}
                     />
                   </Form.Group>
 
@@ -178,6 +183,7 @@ const ContactUs = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
+                      style={{ borderColor: "#4C348C" }}
                     />
                   </Form.Group>
 
@@ -187,9 +193,11 @@ const ContactUs = () => {
                       as="textarea"
                       rows={4}
                       name="message"
+                      className="form-control"
                       placeholder="Your message..."
                       value={formData.message}
                       onChange={handleChange}
+                      style={{ borderColor: "#4C348C", resize: "none" }}
                       required
                     />
                   </Form.Group>
@@ -203,7 +211,7 @@ const ContactUs = () => {
                       style={{
                         background: "linear-gradient(135deg, #4C348C, #6a4fc1)",
                         border: "none",
-                        borderRadius: "25px",
+                        borderRadius: "0.325rem",
                         padding: "12px",
                       }}
                       disabled={loading}

@@ -27,69 +27,67 @@ const HomeProducts = ({ title, products }) => {
     const totalSlides = products ? products.length : 0;
 
     return (
-        <div className="container-area">
-            <div className="container">
-                {/* Header with title + custom buttons */}
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                    <h4 className="fw-bold">{title}</h4>
-                    <div className="d-flex">
-                        <button
-                            className="btn me-2"
-                            onClick={() => sliderRef.current.slickPrev()}
-                            disabled={currentSlide === 0}
-                            style={{
-                                backgroundColor: "#4C348C",
-                                color: "#fff",
-                                borderRadius: "50%",
-                                width: "40px",
-                                height: "40px",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                opacity: currentSlide === 0 ? 0.5 : 1,
-                                cursor: currentSlide === 0 ? "not-allowed" : "pointer",
-                            }}
-                        >
-                            <FaChevronLeft />
-                        </button>
+        <>
+            {/* Header with title + custom buttons */}
+            <div className="d-flex justify-content-between align-items-center mb-3">
+                <h4 className="fw-bold">{title}</h4>
+                <div className="d-flex">
+                    <button
+                        className="btn me-2"
+                        onClick={() => sliderRef.current.slickPrev()}
+                        disabled={currentSlide === 0}
+                        style={{
+                            backgroundColor: "#4C348C",
+                            color: "#fff",
+                            borderRadius: "50%",
+                            width: "40px",
+                            height: "40px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            opacity: currentSlide === 0 ? 0.5 : 1,
+                            cursor: currentSlide === 0 ? "not-allowed" : "pointer",
+                        }}
+                    >
+                        <FaChevronLeft />
+                    </button>
 
-                        <button
-                            className="btn"
-                            onClick={() => sliderRef.current.slickNext()}
-                            disabled={currentSlide >= totalSlides - settings.slidesToShow}
-                            style={{
-                                backgroundColor: "#4C348C",
-                                color: "#fff",
-                                borderRadius: "50%",
-                                width: "40px",
-                                height: "40px",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                opacity:
-                                    currentSlide >= totalSlides - settings.slidesToShow ? 0.5 : 1,
-                                cursor:
-                                    currentSlide >= totalSlides - settings.slidesToShow
-                                        ? "not-allowed"
-                                        : "pointer",
-                            }}
-                        >
-                            <FaChevronRight />
-                        </button>
-                    </div>
-                </div>
-                <div className="mt-4">
-                    <Slider ref={sliderRef} {...settings}>
-                        {products &&
-                            products.map((product, i) => (
-                                <div key={i} className="p-2">
-                                    <ProductCard image={product?.image} name={product?.productName} />
-                                </div>
-                            ))}
-                    </Slider>
+                    <button
+                        className="btn"
+                        onClick={() => sliderRef.current.slickNext()}
+                        disabled={currentSlide >= totalSlides - settings.slidesToShow}
+                        style={{
+                            backgroundColor: "#4C348C",
+                            color: "#fff",
+                            borderRadius: "50%",
+                            width: "40px",
+                            height: "40px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            opacity:
+                                currentSlide >= totalSlides - settings.slidesToShow ? 0.5 : 1,
+                            cursor:
+                                currentSlide >= totalSlides - settings.slidesToShow
+                                    ? "not-allowed"
+                                    : "pointer",
+                        }}
+                    >
+                        <FaChevronRight />
+                    </button>
                 </div>
             </div>
-        </div>
+            <div className="mt-4">
+                <Slider ref={sliderRef} {...settings}>
+                    {products &&
+                        products.map((product, i) => (
+                            <div key={i} className="p-2">
+                                <ProductCard image={product?.image} name={product?.productName} />
+                            </div>
+                        ))}
+                </Slider>
+            </div>
+        </>
     );
 };
 

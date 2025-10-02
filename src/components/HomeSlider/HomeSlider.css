@@ -104,8 +104,8 @@
 /* Desktop (default) */
 .slide-button {
   position: absolute;
-  bottom: 40px;
-  left: 50%;
+  bottom: 80px;
+  left: 10%;
   transform: translateX(-50%);
   z-index: 5;
 }
