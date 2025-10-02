@@ -1,4 +1,4 @@
-// SearchBar.jsx
+
 import React, { useState } from "react";
 import { TextField, Autocomplete, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -25,7 +25,6 @@ const SearchBar = ({width}) => {
       inputValue={inputValue}
       onInputChange={(event, newInputValue) => setInputValue(newInputValue)}
       options={products}
-    //   groupBy={(option) => option.category}
       getOptionLabel={(option) => option.label}
       sx={{ width }}
       renderInput={(params) => (

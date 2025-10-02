@@ -5,7 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import Nav from "../TopNav/TopNav";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Header.css'; // optional custom styles
+import './Header.css'; 
 import Logo from '../../assets/LOGO.png'
 import SearchBar from "../SearchBar/SearchBar";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -21,7 +21,6 @@ const Header = ({ width }) => {
 
     const menuLinks = [
         { label: "About Us", href: "#about-us" },
-        // { label: "Our Products", href: "#products" },
         { label: "Contact Us", href: "#contact-us" },
     ];
     return (

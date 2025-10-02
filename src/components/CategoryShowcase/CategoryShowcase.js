@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 
-// Images for subcategories
 import CarrierImg from "../../assets/carrieroil.png";
 import EssentialImg from "../../assets/essential_oil.png";
 import FragranceImg from "../../assets/Almond_Oil.png";
@@ -84,24 +83,20 @@ const CategoryShowcaseCreative = () => {
                 let textColor = "#000"; 
                 let p;
                 if (isMobile) {
-                  // Mobile: top-left + bottom-right rounded
-                  borderRadius = "12px 0 12px 0";
+                 borderRadius = "12px 0 12px 0";
 
-                  // Odd/Even background
-                  if (subIdx % 2 === 0) {
-                    bgColor = "#FEED9F"; // odd items
+                   if (subIdx % 2 === 0) {
+                    bgColor = "#FEED9F"; 
                   } else {
-                    bgColor = "#917bcd"; // even items
+                    bgColor = "#917bcd";
                   }
                 } else {
-                  // Desktop: your original gradient logic
                   const row = Math.floor(subIdx / 2);
                   const col = subIdx % 2;
                   const isFirstRow = row === 0;
                   const isLastRow = row === 1;
 
                   if (row % 2 === 0) {
-                    // even row
                     bgColor = col === 0 ? "#FEED9F" : "#917bcd";
                     textColor = col === 0 ? "#4C348C" : "#000";
                      p = "#000";
@@ -111,12 +106,11 @@ const CategoryShowcaseCreative = () => {
                      p = "#000";
                   }
 
-                  if (isFirstRow && col === 0) borderRadius = "12px 0 0 0"; // top-left
-                  if (isFirstRow && col === 1) borderRadius = "0 12px 0 0"; // top-right
-                  if (isLastRow && col === 0) borderRadius = "0 0 0 12px"; // bottom-left
-                  if (isLastRow && col === 1) borderRadius = "0 0 12px 0"; // bottom-right
+                  if (isFirstRow && col === 0) borderRadius = "12px 0 0 0";
+                  if (isFirstRow && col === 1) borderRadius = "0 12px 0 0"; 
+                  if (isLastRow && col === 0) borderRadius = "0 0 0 12px"; 
+                  if (isLastRow && col === 1) borderRadius = "0 0 12px 0"; 
 
-                  // Gradient
                   if (isFirstRow && col === 0) bgColor = `linear-gradient(to right bottom, ${bgColor}, #FFFFFF)`;
                   if (isFirstRow && col === 1) bgColor = `linear-gradient(to left bottom, ${bgColor}, #FFFFFF)`;
                   if (isLastRow && col === 0) bgColor = `linear-gradient(to right top, ${bgColor}, #FFFFFF)`;

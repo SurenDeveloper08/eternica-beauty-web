@@ -13,53 +13,6 @@ import img3 from '../../assets/essential_oil.png'
 import img4 from '../../assets/massage_oil.png'
 const CatSlider = ({ title, category }) => {
     console.log(category);
-    //const [category, setCategory] = useState([]);
-    const navigate = useNavigate();
-    // const handleCategoryClick = (cat, sub) => {
-    //     navigate(`/${country}/${cat}/${sub}`);
-    // };
-    // Fetch or load menu
-    // useEffect(() => {
-    //     const fetchMenus = async () => {
-    //         try {
-    //             const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/topcat/getall`);
-    //             if (response && response.data) {
-    //                 setCategory(response.data.data);
-    //             } else {
-    //                 console.error("No data received from API");
-    //             }
-    //         } catch (error) {
-    //             console.error("Failed to load menus:", error.message || error);
-    //         }
-    //     };
-
-    //     fetchMenus();
-    // }, []);
-
-    const settings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 6,       // Desktop: 6 items in a row
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,   // Laptop/tablet
-                settings: {
-                    slidesToShow: 6,
-                }
-            },
-            {
-                breakpoint: 768,    // Mobile
-                settings: {
-                    slidesToShow: 2.5, // two columns visible
-                    slidesToScroll: 1,
-                    rows: 2,          // exactly 2 rows
-                    infinite: false,
-                }
-            }
-        ]
-    };
 
     const categories = [
         {

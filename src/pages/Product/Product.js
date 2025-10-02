@@ -6,6 +6,7 @@ import ImageZoom from "../../components/ImageZoom/ImageZoom";
 import Oil from '../../assets/oil.png'
 import ProductDetailsTabs from "../../components/ProductDetailsTabs/ProductDetailsTabs";
 import HomeProducts from "../../components/HomeProducts/HomeProducts";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 const product = {
     id: "p1",
     name: "Gym Wipes",
@@ -56,7 +57,7 @@ const relatedProducts = [
         country: "uae",
         price: 99,
         productCurrency: "AED",
-        stock: 0, // out of stock
+        stock: 0,
         image: Oil,
     },
     {
@@ -69,7 +70,7 @@ const relatedProducts = [
         country: "uae",
         price: 99,
         productCurrency: "AED",
-        stock: 0, // out of stock
+        stock: 0,
         image: Oil,
     },
     {
@@ -82,7 +83,7 @@ const relatedProducts = [
         country: "uae",
         price: 99,
         productCurrency: "AED",
-        stock: 0, // out of stock
+        stock: 0,
         image: Oil,
     },
     {
@@ -95,7 +96,7 @@ const relatedProducts = [
         country: "uae",
         price: 99,
         productCurrency: "AED",
-        stock: 0, // out of stock
+        stock: 0,
         image: Oil,
     },
 ];
@@ -104,6 +105,7 @@ const Product = () => {
 
     return (
         <div className="container">
+            <Breadcrumbs/>
             <div className="product-page container">
 
                 <div className="gallery-section">

@@ -4,8 +4,6 @@ import wipesImg from "../../assets/green_gymwipes.jpg";
 import dispenserImg from "../../assets/dispenser.jpg";
 import wipesHover from "../../assets/black_gymwipes.jpg";
  import dispenserHover from "../../assets/dispenser.jpg";
-// import oilsImg from "../assets/oils.jpg";
-// import oilsHover from "../assets/oils-hover.jpg";
 
 const products = [
     {

@@ -3,10 +3,10 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import './Breadcrumbs.css'
 const Breadcrumbs = () => {
   const location = useLocation();
-  const { country } = useParams(); // get country from URL
+  const { country } = useParams(); 
   const parts = location.pathname.split("/").filter(Boolean);
 
-  // Remove country from breadcrumb text
+
   const filteredParts = parts.filter((part, index) =>
     index === 0 ? part.toLowerCase() !== country?.toLowerCase() : true
   );

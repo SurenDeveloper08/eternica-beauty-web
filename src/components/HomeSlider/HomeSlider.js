@@ -9,20 +9,7 @@ import Wipes from '../../assets/Banner/WIPPES_BANNER.png'
 import { Button } from "@mui/material";
 
 const HomeSlider = () => {
-    //   const [banners, setBanners] = useState(null);
-
-    //   useEffect(() => {
-    //     const fetchBanners = async () => {
-    //       try {
-    //         const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/banners/getall`);
-    //         setBanners(res.data.data);
-    //       } catch (error) {
-    //         console.error("Failed to fetch banners:", error);
-    //       }
-    //     };
-
-    //     fetchBanners();
-    //   }, []);
+  
     const banners = [
         {
             name: "Massage Oils",
@@ -51,7 +38,7 @@ const HomeSlider = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 4000, // 3 seconds
+        autoplaySpeed: 4000,
         pauseOnHover: true,
         rows: sliderRows,
     };
@@ -70,9 +57,9 @@ const HomeSlider = () => {
                                 bgcolor: "#000",
                                 borderRadius:"0.325rem",
                                 "&:hover": { bgcolor: "#3a276e" },
-                                fontSize: { xs: "0.6rem", sm: "1rem", md: "1.2rem" }, // responsive text
-                                padding: { xs: "2px 6px", sm: "8px 16px", md: "10px 20px" }, // responsive padding
-                                textTransform: "none", // optional: keep text as-is
+                                fontSize: { xs: "0.6rem", sm: "1rem", md: "1.2rem" },
+                                padding: { xs: "2px 6px", sm: "8px 16px", md: "10px 20px" },
+                                textTransform: "none", 
                             }}
                         >
                             {banner.cta}

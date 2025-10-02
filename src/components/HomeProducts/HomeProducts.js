@@ -15,7 +15,7 @@ const HomeProducts = ({ title, products }) => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        arrows: false, // disable default arrows
+        arrows: false, 
         beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
         responsive: [
             { breakpoint: 1024, settings: { slidesToShow: 3 } },

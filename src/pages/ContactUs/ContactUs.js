@@ -46,8 +46,6 @@ const ContactUs = () => {
       setError("An error occurred. Please try again.");
     } finally {
       setLoading(false);
-
-      // Clear messages after 5 seconds
       setTimeout(() => {
         setSuccess("");
         setError("");

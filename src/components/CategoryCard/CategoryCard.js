@@ -1,4 +1,4 @@
-// CategoryCard.js
+
 import React from 'react';
 import './CategoryCard.css';
 
