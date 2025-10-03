@@ -21,19 +21,18 @@ const Footer = () => {
           <Col md={3} sm={6} className="footer-nav">
             <h3>Products</h3>
             <ul>
-              <li><a href="/oil/spa">Carrier & Base Oils</a></li>
-              <li><a href="/oil/salon">Essential Oil</a></li>
-              <li><a href="/oil/hotel">Fragrance Oil</a></li>
-              <li><a href="/oil/wellness">Masage Oil</a></li>
-              <li><a href="/wipes/gym-wipes">Gym Wipes</a></li>
-
+              <li><a href="/category">Carrier & Base Oils</a></li>
+              <li><a href="/category">Essential Oil</a></li>
+              <li><a href="/category">Fragrance Oil</a></li>
+              <li><a href="/category">Masage Oil</a></li>
+              <li><a href="/category">Gym Wipes</a></li>
             </ul>
           </Col>
           <Col md={3} sm={6} className="footer-nav">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="eternica-beauty-web/about">About Us</a></li>
-              <li><a href="eternica-beauty-web/contact">Contact</a></li>
+              <li><a href="/eternica-beauty-web/about">About Us</a></li>
+              <li><a href="/eternica-beauty-web/contact">Contact</a></li>
             </ul>
           </Col>
 
@@ -53,7 +52,6 @@ const Footer = () => {
               />
               <button type="submit" className="btn">Subscribe</button>
             </form>
-
 
             <div className="footer-social">
               <a href="#"><FaFacebookF /></a>

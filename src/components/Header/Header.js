@@ -52,27 +52,27 @@ const Header = ({ width }) => {
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a className="dropdown-item" href="/Carrier-Oils-and-Base-Oils">
+                                        <a className="dropdown-item" href="/category">
                                             Carrier & Base Oils
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="/Essential-Oil">
+                                        <a className="dropdown-item" href="/category">
                                             Essential Oils
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="/Fragrance-Oil">
+                                        <a className="dropdown-item" href="/category">
                                             Fragrance Oils
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="/Massage-Oil">
+                                        <a className="dropdown-item" href="/category">
                                             Massage Oils
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="/Gym-Wipes">
+                                        <a className="dropdown-item" href="/category">
                                             Wipes & Dispensers
                                         </a>
                                     </li>
@@ -80,7 +80,7 @@ const Header = ({ width }) => {
                             </li>
 
                             <li className="nav-item">
-                                <a href="contact" className="nav-link px-3 text-dark fw-bold">Contact Us</a>
+                                <a href="/eternica-beauty-web/contact" className="nav-link px-3 text-dark fw-bold">Contact Us</a>
                             </li>
 
                             <li className="nav-item">

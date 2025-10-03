@@ -18,37 +18,37 @@ const CatSlider = ({ title, category }) => {
         {
             id: 1,
             title: "Carrier & Base Oils",
-            link: "/Carrier-oils",
+            link: "/category",
             image: img1,
         },
         {
             id: 2,
             title: "Essential Oils",
-            link: "/essential-oils",
+            link: "/category",
             image: img2,
         },
         {
             id: 3,
             title: "Fragrance Oils",
-            link: "/fragrance-oils",
+            link: "/category",
             image: img3,
         },
         {
             id: 4,
             title: "Massage Oils",
-            link: "/massage-oils",
+            link: "/category",
             image: img4,
         },
         {
             id: 5,
             title: "Gym Wipes",
-            link: "/gym-oils",
+            link: "/category",
             image: gymwipes,
         },
         {
             id: 6,
             title: "Dispensers",
-            link: "/dispensers-oils",
+            link: "/category",
             image: dispenser,
         },
     ];

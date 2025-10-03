@@ -21,8 +21,8 @@ const WebsiteRoutes = () => {
                 {/* Home page */}
                 <Route path="eternica-beauty-web" element={<Home />} />
                 <Route path="category" element={<ProductListing />} />
-                <Route path=":category/:subCategory" element={<ProductListing />} />
-                <Route path=":category/:subCategory/:slug" element={<Product />} />
+                <Route path="category/subCategory" element={<ProductListing />} />
+                <Route path="product" element={<Product />} />
                 <Route path="eternica-beauty-web/cart" element={<Cart />} />
                 <Route path="eternica-beauty-web/checkout" element={<Checkout />} />
                 <Route path="eternica-beauty-web/thank-you" element={<ThankYouPage />} />

@@ -14,7 +14,7 @@ const HomeSlider = () => {
         {
             name: "Massage Oils",
             imageUrl: Oil,
-            link: "/massage-oil",
+            link: "/category",
             startDate: "2025-09-01",
             endDate: "2025-09-30",
             cta: "Buy Oils"
@@ -22,7 +22,7 @@ const HomeSlider = () => {
         {
             name: "Gym Wipes",
             imageUrl: Wipes,
-            link: "/gym-wipes",
+            link: "/category",
             startDate: "2025-09-01",
             endDate: "2025-09-30",
             cta: "Buy Wipes"
