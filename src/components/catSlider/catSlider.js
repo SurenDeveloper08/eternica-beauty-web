@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './catSlider.css'
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { motion } from "framer-motion";
 import Slider from "react-slick";
@@ -11,44 +11,44 @@ import gymwipes from '../../assets/gymwipes.png'
 import img2 from '../../assets/sunflowr_oil.png'
 import img3 from '../../assets/essential_oil.png'
 import img4 from '../../assets/massage_oil.png'
-const CatSlider = ({ title, category }) => {
-    console.log(category);
 
+const CatSlider = ({ title, category }) => {
+   
     const categories = [
         {
             id: 1,
             title: "Carrier & Base Oils",
-            link: "/category",
+            link: "/Carrier-Base-Oils",
             image: img1,
         },
         {
             id: 2,
             title: "Essential Oils",
-            link: "/category",
+            link: "/Essential-Oils",
             image: img2,
         },
         {
             id: 3,
             title: "Fragrance Oils",
-            link: "/category",
+            link: "/Fragrance-Oils",
             image: img3,
         },
         {
             id: 4,
             title: "Massage Oils",
-            link: "/category",
+            link: "/Massage-Oils",
             image: img4,
         },
         {
             id: 5,
             title: "Gym Wipes",
-            link: "/category",
+            link: "/Gym-Wipes",
             image: gymwipes,
         },
         {
             id: 6,
             title: "Dispensers",
-            link: "/category",
+            link: "/Dispensers",
             image: dispenser,
         },
     ];
@@ -68,12 +68,12 @@ const CatSlider = ({ title, category }) => {
                         transition={{ duration: 0.2, delay: cat.index * 0.1 }}
                         whileHover={{ scale: 1.05 }}
                     >
-                        <a className="category-card text-center" href={cat.link} style={{ textDecoration: "none" }}>
+                        <Link className="category-card text-center" to={cat.link} style={{ textDecoration: "none" }}>
                             <div className="category-img-wrapper mx-auto mb-3">
                                 <img src={cat.image} alt={cat.title} className="category-img" />
                             </div>
                             <h6 className="category-title">{cat.title}</h6>
-                        </a>
+                        </Link>
                     </motion.div>
                 ))}
             </div>

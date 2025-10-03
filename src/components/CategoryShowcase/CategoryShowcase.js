@@ -66,7 +66,7 @@ const CategoryShowcaseCreative = () => {
       {categories && categories.map((cat, catIdx) => {
         return (
           <div key={catIdx} className="mb-5">
-             <motion.div
+            <motion.div
               className="text-center mb-5"
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -75,18 +75,18 @@ const CategoryShowcaseCreative = () => {
               <h2 style={{ color: "#4C348C", fontWeight: "700" }}>{cat.title}</h2>
               <p className="text-muted mx-auto" style={{ maxWidth: "700px" }}>{cat.about}</p>
             </motion.div>
-  <Row className="justify-content-center g-0" style={{ borderRadius: "0.325px" }}>
+            <Row className="justify-content-center g-0" style={{ borderRadius: "0.325px" }}>
               {cat.subcategories.map((sub, subIdx) => {
-              
+
                 let borderRadius = "0px";
                 let bgColor = "#FEED9F";
-                let textColor = "#000"; 
+                let textColor = "#000";
                 let p;
                 if (isMobile) {
-                 borderRadius = "12px 0 12px 0";
+                  borderRadius = "12px 0 12px 0";
 
-                   if (subIdx % 2 === 0) {
-                    bgColor = "#FEED9F"; 
+                  if (subIdx % 2 === 0) {
+                    bgColor = "#FEED9F";
                   } else {
                     bgColor = "#917bcd";
                   }
@@ -99,17 +99,17 @@ const CategoryShowcaseCreative = () => {
                   if (row % 2 === 0) {
                     bgColor = col === 0 ? "#FEED9F" : "#917bcd";
                     textColor = col === 0 ? "#4C348C" : "#000";
-                     p = "#000";
+                    p = "#000";
                   } else {
                     bgColor = col === 0 ? "#917bcd" : "#FEED9F";
                     textColor = col === 0 ? "#000" : "#4C348C";
-                     p = "#000";
+                    p = "#000";
                   }
 
                   if (isFirstRow && col === 0) borderRadius = "12px 0 0 0";
-                  if (isFirstRow && col === 1) borderRadius = "0 12px 0 0"; 
-                  if (isLastRow && col === 0) borderRadius = "0 0 0 12px"; 
-                  if (isLastRow && col === 1) borderRadius = "0 0 12px 0"; 
+                  if (isFirstRow && col === 1) borderRadius = "0 12px 0 0";
+                  if (isLastRow && col === 0) borderRadius = "0 0 0 12px";
+                  if (isLastRow && col === 1) borderRadius = "0 0 12px 0";
 
                   if (isFirstRow && col === 0) bgColor = `linear-gradient(to right bottom, ${bgColor}, #FFFFFF)`;
                   if (isFirstRow && col === 1) bgColor = `linear-gradient(to left bottom, ${bgColor}, #FFFFFF)`;
@@ -123,7 +123,8 @@ const CategoryShowcaseCreative = () => {
                       initial={{ opacity: 0, x: subIdx % 2 === 0 ? -40 : 40 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6 }}
-                      className="d-flex align-items-start w-100 h-100 p-4"
+                      // className="d-flex align-items-start w-100 h-100 p-4"
+                      className="d-flex flex-column flex-md-row align-items-center align-items-md-start text-center text-md-start p-4 h-100"
                       style={{
                         background: bgColor,
                         color: textColor,
@@ -133,7 +134,8 @@ const CategoryShowcaseCreative = () => {
                       <motion.img
                         src={sub.image}
                         alt={sub.title}
-                        className="me-3"
+                        // className="me-3"
+                        className="mb-3 mb-md-0 me-md-3 rounded-circle"
                         style={{ width: "140px", height: "140px", borderRadius: "50%", objectFit: "cover" }}
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}

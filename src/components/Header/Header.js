@@ -14,21 +14,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Header = ({ width }) => {
-    const [mobileOpen, setMobileOpen] = useState(false);
-
-    const toggleMobileMenu = () => {
-        setMobileOpen(!mobileOpen);
-    };
-
-    const menuLinks = [
-        { label: "About Us", href: "#about-us" },
-        { label: "Contact Us", href: "#contact-us" },
-    ];
-    return (
+      return (
         <header className="section-header border-bottom">
-
             <Nav />
-
             <div className="bg-white border-bottom py-2">
                 <div className="container d-flex align-items-center justify-content-between">
                     <div className="header-logo">
@@ -53,27 +41,27 @@ const Header = ({ width }) => {
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <Link className="dropdown-item" to="/category">
+                                        <Link className="dropdown-item" to="/Carrier-Base-Oils">
                                             Carrier & Base Oils
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="/category">
+                                        <Link className="dropdown-item" to="/Essential-Oils">
                                             Essential Oils
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="/category">
+                                        <Link className="dropdown-item" to="/Fragrance-Oils">
                                             Fragrance Oils
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="/category">
+                                        <Link className="dropdown-item" to="/Massage-Oils">
                                             Massage Oils
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="/category">
+                                        <Link className="dropdown-item" to="/Wipes-Dispensers">
                                             Wipes & Dispensers
                                         </Link>
                                     </li>

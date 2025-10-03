@@ -1,27 +1,33 @@
-
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { TextField, Autocomplete, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 const products = [
-  { label: "iPhone 14", category: "Mobiles" },
-  { label: "Samsung Galaxy S23", category: "Mobiles" },
-  { label: "Leather Jacket", category: "Fashion" },
-  { label: "Office Chair", category: "Furnitures" },
-  { label: "MacBook Pro", category: "Electronics" },
-  { label: "AirPods", category: "Electronics" },
+  { label: "Carrier Oils and Base Oils", category: "Carrier-Oils", link: "Carrier-Oils" },
+  { label: "Gym Wipes", category: "Gym-Wipes", link: "Gym-Wipes" },
+  { label: "Dispenser", category: "Wipes", link: "Dispenser" },
 ];
 
-const SearchBar = ({width}) => {
+const SearchBar = ({ width }) => {
   const [value, setValue] = useState(null);
   const [inputValue, setInputValue] = useState("");
-
+  const navigate = useNavigate();
   const primaryColor = "#4C348C";
+
+  const handleOptionSelect = (event, newValue) => {
+    setValue(newValue);
+    if (newValue && newValue.link) {
+      // navigate to product listing page
+      navigate(`/category/${newValue.link}`);
+    }
+  };
+
 
   return (
     <Autocomplete
       value={value}
-      onChange={(event, newValue) => setValue(newValue)}
+      onChange={handleOptionSelect}
       inputValue={inputValue}
       onInputChange={(event, newInputValue) => setInputValue(newInputValue)}
       options={products}
@@ -59,7 +65,13 @@ const SearchBar = ({width}) => {
             ...params.InputProps,
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton type="submit" aria-label="search">
+                <IconButton type="submit" aria-label="search"
+                  onClick={() => {
+                    if (value && value.link) {
+                      navigate(`/${value.link}`);
+                    }
+                  }}
+                >
                   <SearchIcon />
                 </IconButton>
               </InputAdornment>

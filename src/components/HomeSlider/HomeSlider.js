@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import Slider from "react-slick";
 import './HomeSlider.css'
@@ -9,7 +10,7 @@ import Wipes from '../../assets/Banner/WIPPES_BANNER.png'
 import { Button } from "@mui/material";
 
 const HomeSlider = () => {
-  
+
     const banners = [
         {
             name: "Massage Oils",
@@ -29,8 +30,8 @@ const HomeSlider = () => {
         }
     ];
 
-
     const sliderRows = banners?.length > 1 ? 1 : 1;
+
     var settings = {
         dots: false,
         infinite: banners?.length > 1,
@@ -51,15 +52,16 @@ const HomeSlider = () => {
                     <img src={banner.imageUrl} alt={banner.name} className='w-100' />
                     <div className="slide-button">
                         <Button
+                            component={Link}
                             variant="contained"
-                            href={banner.link}
+                            to={banner.link}
                             sx={{
                                 bgcolor: "#000",
-                                borderRadius:"0.325rem",
+                                borderRadius: "0.325rem",
                                 "&:hover": { bgcolor: "#3a276e" },
                                 fontSize: { xs: "0.6rem", sm: "1rem", md: "1.2rem" },
                                 padding: { xs: "2px 6px", sm: "8px 16px", md: "10px 20px" },
-                                textTransform: "none", 
+                                textTransform: "none",
                             }}
                         >
                             {banner.cta}

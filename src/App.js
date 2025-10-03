@@ -37,9 +37,9 @@ function App() {
       </Routes> */}
         <Routes >
           <Route path="/" element={<Home />} />
-          <Route path="/category" element={<ProductListing />} />
-          {/* <Route path="/:category/:subCategory" element={<ProductListing />} /> */}
-          <Route path="/product" element={<Product />} />
+          <Route path="/:category" element={<ProductListing />} />
+          <Route path="/:category/:subCategory" element={<ProductListing />} />
+          <Route path="/:category/:subCategory/:slug" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thank-you" element={<ThankYouPage />} />

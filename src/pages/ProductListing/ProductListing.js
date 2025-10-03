@@ -6,6 +6,7 @@ import Banner from '../../assets/banner.png'
 import Oil from '../../assets/oil.png'
 import wipes1 from '../../assets/black.png'
 import wipes2 from '../../assets/blue.png'
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 const products = [
   { id: 1, name: 'Lavender Oil', image: Oil },
   { id: 2, name: 'Coconut Oil', image: wipes1 },
@@ -28,15 +29,16 @@ const ProductListing = () => {
             massage, and wellness.
           </p>
         </div>
-        <img
+        {/* <img
           src={Banner}
           alt="Essential Oils Banner"
           className="banner-image"
-        />
+        /> */}
       </div>
 
       <div className="container my-5">
-       <div className="product-grid">
+        <Breadcrumbs />
+        <div className="product-grid">
           {products && products.map((product) => (
             <ProductCard key={product.id} image={product.image} name={product.name} />
           ))}

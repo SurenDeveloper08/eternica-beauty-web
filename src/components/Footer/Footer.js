@@ -22,11 +22,11 @@ const Footer = () => {
           <Col md={3} sm={6} className="footer-nav">
             <h3>Products</h3>
             <ul>
-              <li><Link to="/category">Carrier & Base Oils</Link></li>
-              <li><Link to="/category">Essential Oil</Link></li>
-              <li><Link to="/category">Fragrance Oil</Link></li>
-              <li><Link to="/category">Masage Oil</Link></li>
-              <li><Link to="/category">Gym Wipes</Link></li>
+              <li><Link to="/Carrier-Base-Oils">Carrier & Base Oils</Link></li>
+              <li><Link to="/Essential-Oil">Essential Oil</Link></li>
+              <li><Link to="/Fragrance-Oi">Fragrance Oil</Link></li>
+              <li><Link to="/Masage-Oil">Masage Oil</Link></li>
+              <li><Link to="/Gym-Wipes">Gym Wipes</Link></li>
             </ul>
           </Col>
           <Col md={3} sm={6} className="footer-nav">
