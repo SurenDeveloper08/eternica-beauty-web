@@ -31,7 +31,7 @@ const Header = ({ width }) => {
             <div className="bg-white border-bottom py-2">
                 <div className="container d-flex align-items-center justify-content-between">
                     <div className="header-logo">
-                        <a href="/" aria-label="Home">
+                        <a href="/eternica-beauty-web" aria-label="Home">
                             <img src={Logo} alt="Site Logo" width="200" />
                         </a>
                     </div>
@@ -84,13 +84,13 @@ const Header = ({ width }) => {
                             </li>
 
                             <li className="nav-item">
-                                <a href="about" className="nav-link px-3 text-dark fw-bold">About Us</a>
+                                <a href="/eternica-beauty-web/about" className="nav-link px-3 text-dark fw-bold">About Us</a>
                             </li>
                         </ul>
                     </nav>
 
                     <div className="d-flex align-items-center">
-                        <a href="/cart" className="text-dark position-relative" aria-label="View cart">
+                        <a href="/eternica-beauty-web/cart" className="text-dark position-relative" aria-label="View cart">
                             <ShoppingBagIcon fontSize="large" />
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 4

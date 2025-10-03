@@ -10,7 +10,7 @@ import Cart from '../pages/Cart/Cart';
 import Checkout from '../pages/Checkout/Checkout';
 import ThankYouPage from '../components/ThankYouPage/ThankYouPage';
 import ContactUs from '../pages/ContactUs/ContactUs';
-import AboutUs from '../components/AboutUs/AboutUs ';
+import AboutUs from '../components/AboutUs/AboutUs';
 
 const WebsiteRoutes = () => {
 
@@ -18,15 +18,16 @@ const WebsiteRoutes = () => {
         <>
             <Header />
             <Routes>
-                <Route index element={<Home />} />
-                <Route path=":category" element={<ProductListing />} />
+                {/* Home page */}
+                <Route path="eternica-beauty-web" element={<Home />} />
+                <Route path="category" element={<ProductListing />} />
                 <Route path=":category/:subCategory" element={<ProductListing />} />
                 <Route path=":category/:subCategory/:slug" element={<Product />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/thank-you" element={<ThankYouPage />} />
-                <Route path="/contact" element={<ContactUs />} />
-                <Route path="/about" element={<AboutUs />} />
+                <Route path="eternica-beauty-web/cart" element={<Cart />} />
+                <Route path="eternica-beauty-web/checkout" element={<Checkout />} />
+                <Route path="eternica-beauty-web/thank-you" element={<ThankYouPage />} />
+                <Route path="eternica-beauty-web/contact" element={<ContactUs />} />
+                <Route path="eternica-beauty-web/about" element={<AboutUs />} />
             </Routes>
             <Footer />
             <WhatsAppButton />

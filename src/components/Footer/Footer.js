@@ -21,19 +21,19 @@ const Footer = () => {
           <Col md={3} sm={6} className="footer-nav">
             <h3>Products</h3>
             <ul>
-              <li><a href="/products/spa">Carrier & Base Oils</a></li>
-              <li><a href="/products/salon">Essential Oil</a></li>
-              <li><a href="/products/hotel">Fragrance Oil</a></li>
-              <li><a href="/products/wellness">Masage Oil</a></li>
-              <li><a href="/products/wipes">Gym Wipes</a></li>
+              <li><a href="/oil/spa">Carrier & Base Oils</a></li>
+              <li><a href="/oil/salon">Essential Oil</a></li>
+              <li><a href="/oil/hotel">Fragrance Oil</a></li>
+              <li><a href="/oil/wellness">Masage Oil</a></li>
+              <li><a href="/wipes/gym-wipes">Gym Wipes</a></li>
 
             </ul>
           </Col>
           <Col md={3} sm={6} className="footer-nav">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="eternica-beauty-web/about">About Us</a></li>
+              <li><a href="eternica-beauty-web/contact">Contact</a></li>
             </ul>
           </Col>
 
