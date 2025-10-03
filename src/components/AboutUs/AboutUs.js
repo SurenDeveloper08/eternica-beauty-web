@@ -4,7 +4,7 @@ import aboutImg from "../../assets/about/aboutus.png";
 import './AboutUs.css'
 const AboutUs = () => {
     return (
-        <>
+        < div className="container py-5">
             <div className="row align-items-center gx-4">
                 <div className="col-md-6">
                     <motion.div
@@ -61,7 +61,7 @@ const AboutUs = () => {
                     </motion.div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -29,14 +29,14 @@
 }
 
 .slick-prev:before {
-    content: "\\f104" !important;
+    content: "\f104" !important;
     color: #000 !important;
     font-family: FontAwesome !important;
     font-size: 30px !important;
 }
 
 .slick-next:before {
-    content: "\\f105" !important;
+    content: "\f105" !important;
     color: #000 !important;
     font-family: FontAwesome !important;
     font-size: 30px !important;

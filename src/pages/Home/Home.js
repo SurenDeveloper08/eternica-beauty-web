@@ -201,7 +201,7 @@ const Home = () => {
             <section className='container py-5'>
                 <CatSlider title={'Explore Our Categories'} category={category} />
             </section>
-            <section className='container py-5' id='about-us'>
+            <section id='about-us'>
                 <AboutUs />
             </section>
             <section className='container py-5'>

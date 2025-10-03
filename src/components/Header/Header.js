@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, IconButton, Box, Typography, Button, Drawer, List, ListItem, ListItemText, InputBase } from "@mui/material";
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import Nav from "../TopNav/TopNav";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Header.css'; 
+import './Header.css';
 import Logo from '../../assets/LOGO.png'
 import SearchBar from "../SearchBar/SearchBar";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -27,7 +28,7 @@ const Header = ({ width }) => {
         <header className="section-header border-bottom">
 
             <Nav />
-   
+
             <div className="bg-white border-bottom py-2">
                 <div className="container d-flex align-items-center justify-content-between">
                     <div className="header-logo">
@@ -52,51 +53,51 @@ const Header = ({ width }) => {
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a className="dropdown-item" href="/category">
+                                        <Link className="dropdown-item" to="/category">
                                             Carrier & Base Oils
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="/category">
+                                        <Link className="dropdown-item" to="/category">
                                             Essential Oils
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="/category">
+                                        <Link className="dropdown-item" to="/category">
                                             Fragrance Oils
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="/category">
+                                        <Link className="dropdown-item" to="/category">
                                             Massage Oils
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="/category">
+                                        <Link className="dropdown-item" to="/category">
                                             Wipes & Dispensers
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </li>
 
                             <li className="nav-item">
-                                <a href="contact" className="nav-link px-3 text-dark fw-bold">Contact Us</a>
+                                 <Link to="/contact" className="nav-link px-3 text-dark fw-bold">Contact Us</Link>
                             </li>
 
                             <li className="nav-item">
-                                <a href="/about" className="nav-link px-3 text-dark fw-bold">About Us</a>
+                                <Link to="/about" className="nav-link px-3 text-dark fw-bold">About Us</Link>
                             </li>
                         </ul>
                     </nav>
 
                     <div className="d-flex align-items-center">
-                        <a href="/cart" className="text-dark position-relative" aria-label="View cart">
+                       <Link to="/cart" className="text-dark position-relative" aria-label="View cart">
                             <ShoppingBagIcon fontSize="large" />
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 4
                                 <span className="visually-hidden">items in cart</span>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
@@ -21,18 +22,18 @@ const Footer = () => {
           <Col md={3} sm={6} className="footer-nav">
             <h3>Products</h3>
             <ul>
-              <li><a href="/category">Carrier & Base Oils</a></li>
-              <li><a href="/category">Essential Oil</a></li>
-              <li><a href="/category">Fragrance Oil</a></li>
-              <li><a href="/category">Masage Oil</a></li>
-              <li><a href="/category">Gym Wipes</a></li>
+              <li><Link to="/category">Carrier & Base Oils</Link></li>
+              <li><Link to="/category">Essential Oil</Link></li>
+              <li><Link to="/category">Fragrance Oil</Link></li>
+              <li><Link to="/category">Masage Oil</Link></li>
+              <li><Link to="/category">Gym Wipes</Link></li>
             </ul>
           </Col>
           <Col md={3} sm={6} className="footer-nav">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </Col>
 
@@ -54,10 +55,10 @@ const Footer = () => {
             </form>
 
             <div className="footer-social">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaLinkedinIn /></a>
+              <Link to="#"><FaFacebookF /></Link>
+              <Link to="#"><FaTwitter /></Link>
+              <Link to="#"><FaInstagram /></Link>
+              <Link to="#"><FaLinkedinIn /></Link>
             </div>
           </Col>
         </Row>
