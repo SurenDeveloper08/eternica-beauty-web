@@ -8,20 +8,36 @@ import "slick-carousel/slick/slick-theme.css";
 const HomeProducts = ({ title, products }) => {
     const sliderRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [slidesToShow, setSlidesToShow] = useState(4);
 
     const settings = {
         dots: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: slidesToShow,
         slidesToScroll: 1,
-        arrows: false, 
+        arrows: false,
         beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
         responsive: [
-            { breakpoint: 1024, settings: { slidesToShow: 3 } },
-            { breakpoint: 768, settings: { slidesToShow: 2 } },
-            { breakpoint: 480, settings: { slidesToShow: 1 } },
+            {
+                breakpoint: 1200, // large
+                settings: { slidesToShow: 3 },
+            },
+            {
+                breakpoint: 992, // tablet landscape
+                settings: { slidesToShow: 2 },
+            },
+            {
+                breakpoint: 576, // mobile
+                settings: { slidesToShow: 1 },
+            },
         ],
+        // capture live slidesToShow at runtime
+        onReInit: () => {
+            if (sliderRef.current) {
+                setSlidesToShow(sliderRef.current.props.slidesToShow);
+            }
+        },
     };
 
     const totalSlides = products ? products.length : 0;
@@ -54,7 +70,7 @@ const HomeProducts = ({ title, products }) => {
                     <button
                         className="btn"
                         onClick={() => sliderRef.current.slickNext()}
-                        disabled={currentSlide >= totalSlides - settings.slidesToShow}
+                        disabled={currentSlide >= totalSlides - slidesToShow}
                         style={{
                             backgroundColor: "#4C348C",
                             color: "#fff",
@@ -64,10 +80,9 @@ const HomeProducts = ({ title, products }) => {
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            opacity:
-                                currentSlide >= totalSlides - settings.slidesToShow ? 0.5 : 1,
+                            opacity: currentSlide >= totalSlides - slidesToShow ? 0.5 : 1,
                             cursor:
-                                currentSlide >= totalSlides - settings.slidesToShow
+                                currentSlide >= totalSlides - slidesToShow
                                     ? "not-allowed"
                                     : "pointer",
                         }}
@@ -76,12 +91,16 @@ const HomeProducts = ({ title, products }) => {
                     </button>
                 </div>
             </div>
+
             <div className="mt-4">
                 <Slider ref={sliderRef} {...settings}>
                     {products &&
                         products.map((product, i) => (
                             <div key={i} className="p-2">
-                                <ProductCard image={product?.image} name={product?.productName} />
+                                <ProductCard
+                                    image={product?.image}
+                                    name={product?.productName}
+                                />
                             </div>
                         ))}
                 </Slider>
