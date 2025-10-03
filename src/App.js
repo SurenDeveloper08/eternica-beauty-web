@@ -1,7 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './pages/Home/Home';
 import "@fontsource/montserrat"
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/500.css";
