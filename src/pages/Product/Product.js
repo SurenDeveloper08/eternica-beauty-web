@@ -146,7 +146,7 @@ const Product = () => {
                     { label: "Made In", value: "UAE" },
                 ]}
             />
-            <section className='container'>
+            <section className='container pb-4'>
                 <HomeProducts title={'Customer Favorites'} products={relatedProducts} />
             </section>
         </div>
