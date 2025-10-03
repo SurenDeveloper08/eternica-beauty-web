@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/eternica-beauty-web/static/css/main.bdc460e7.css",
-    "main.js": "/eternica-beauty-web/static/js/main.9db6332d.js",
+    "main.css": "/eternica-beauty-web/static/css/main.06603a8c.css",
+    "main.js": "/eternica-beauty-web/static/js/main.b7862d75.js",
     "static/js/453.1311b4c1.chunk.js": "/eternica-beauty-web/static/js/453.1311b4c1.chunk.js",
     "static/media/banner.png": "/eternica-beauty-web/static/media/banner.6dc5ac0e1f9874172d32.png",
     "static/media/WIPPES_BANNER.png": "/eternica-beauty-web/static/media/WIPPES_BANNER.37789ab01f1c44a83204.png",
@@ -58,12 +58,12 @@
     "static/media/slick.ttf": "/eternica-beauty-web/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/eternica-beauty-web/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/eternica-beauty-web/index.html",
-    "main.bdc460e7.css.map": "/eternica-beauty-web/static/css/main.bdc460e7.css.map",
-    "main.9db6332d.js.map": "/eternica-beauty-web/static/js/main.9db6332d.js.map",
+    "main.06603a8c.css.map": "/eternica-beauty-web/static/css/main.06603a8c.css.map",
+    "main.b7862d75.js.map": "/eternica-beauty-web/static/js/main.b7862d75.js.map",
     "453.1311b4c1.chunk.js.map": "/eternica-beauty-web/static/js/453.1311b4c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bdc460e7.css",
-    "static/js/main.9db6332d.js"
+    "static/css/main.06603a8c.css",
+    "static/js/main.b7862d75.js"
   ]
 }
