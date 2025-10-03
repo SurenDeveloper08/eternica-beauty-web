@@ -10,27 +10,27 @@ import Cart from '../pages/Cart/Cart';
 import Checkout from '../pages/Checkout/Checkout';
 import ThankYouPage from '../components/ThankYouPage/ThankYouPage';
 import ContactUs from '../pages/ContactUs/ContactUs';
-import AboutUs from '../components/AboutUs/AboutUs ';
+import AboutUs from '../components/AboutUs/AboutUs';
 
 const WebsiteRoutes = () => {
-
-    return (
-        <>
-            <Header />
-            <Routes>
-                <Route index element={<Home />} />
-                <Route path=":category" element={<ProductListing />} />
-                <Route path=":category/:subCategory" element={<ProductListing />} />
-                <Route path=":category/:subCategory/:slug" element={<Product />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/thank-you" element={<ThankYouPage />} />
-                <Route path="/contact" element={<ContactUs />} />
-                <Route path="/about" element={<AboutUs />} />
-            </Routes>
-            <Footer />
-            <WhatsAppButton />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path=":category" element={<ProductListing />} />
+        <Route path=":category/:subCategory" element={<ProductListing />} />
+        <Route path=":category/:subCategory/:slug" element={<Product />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="thank-you" element={<ThankYouPage />} />
+        <Route path="contact" element={<ContactUs />} />
+        <Route path="about" element={<AboutUs />} />
+      </Routes>
+      <Footer />
+      <WhatsAppButton />
+    </>
+  );
 };
+
 export default WebsiteRoutes;
