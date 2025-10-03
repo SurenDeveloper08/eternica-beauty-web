@@ -29,11 +29,11 @@ const ProductListing = () => {
             massage, and wellness.
           </p>
         </div>
-        {/* <img
+        <img
           src={Banner}
           alt="Essential Oils Banner"
           className="banner-image"
-        /> */}
+        />
       </div>
 
       <div className="container my-5">
