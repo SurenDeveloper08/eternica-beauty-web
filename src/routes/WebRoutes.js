@@ -19,7 +19,7 @@ const WebsiteRoutes = () => {
             <Header />
             <Routes>
                 {/* Home page */}
-                <Route index element={<Home />} />
+                <Route path="" element={<Home />} />
                 <Route path="category" element={<ProductListing />} />
                 <Route path=":category/:subCategory" element={<ProductListing />} />
                 <Route path="product/:slug" element={<Product />} />
