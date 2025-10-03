@@ -80,17 +80,17 @@ const Header = ({ width }) => {
                             </li>
 
                             <li className="nav-item">
-                                <a href="/eternica-beauty-web/contact" className="nav-link px-3 text-dark fw-bold">Contact Us</a>
+                                <a href="contact" className="nav-link px-3 text-dark fw-bold">Contact Us</a>
                             </li>
 
                             <li className="nav-item">
-                                <a href="/eternica-beauty-web/about" className="nav-link px-3 text-dark fw-bold">About Us</a>
+                                <a href="/about" className="nav-link px-3 text-dark fw-bold">About Us</a>
                             </li>
                         </ul>
                     </nav>
 
                     <div className="d-flex align-items-center">
-                        <a href="/eternica-beauty-web/cart" className="text-dark position-relative" aria-label="View cart">
+                        <a href="/cart" className="text-dark position-relative" aria-label="View cart">
                             <ShoppingBagIcon fontSize="large" />
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 4

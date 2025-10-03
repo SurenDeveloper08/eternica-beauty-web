@@ -19,15 +19,15 @@ const WebsiteRoutes = () => {
             <Header />
             <Routes>
                 {/* Home page */}
-                <Route path="eternica-beauty-web" element={<Home />} />
+                <Route path="" element={<Home />} />
                 <Route path="category" element={<ProductListing />} />
                 <Route path="category/subCategory" element={<ProductListing />} />
                 <Route path="product" element={<Product />} />
-                <Route path="eternica-beauty-web/cart" element={<Cart />} />
-                <Route path="eternica-beauty-web/checkout" element={<Checkout />} />
-                <Route path="eternica-beauty-web/thank-you" element={<ThankYouPage />} />
-                <Route path="eternica-beauty-web/contact" element={<ContactUs />} />
-                <Route path="eternica-beauty-web/about" element={<AboutUs />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path="checkout" element={<Checkout />} />
+                <Route path="thank-you" element={<ThankYouPage />} />
+                <Route path="/contact" element={<ContactUs />} />
+                <Route path="/about" element={<AboutUs />} />
             </Routes>
             <Footer />
             <WhatsAppButton />

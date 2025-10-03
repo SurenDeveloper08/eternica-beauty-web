@@ -31,8 +31,8 @@ const Footer = () => {
           <Col md={3} sm={6} className="footer-nav">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/eternica-beauty-web/about">About Us</a></li>
-              <li><a href="/eternica-beauty-web/contact">Contact</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </Col>
 
