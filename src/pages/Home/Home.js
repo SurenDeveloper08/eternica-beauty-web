@@ -1,7 +1,7 @@
 import React from 'react'
 import HomeSlider from '../../components/HomeSlider/HomeSlider'
 import CatSlider from '../../components/catSlider/catSlider'
-import AboutUs from '../../components/AboutUs/AboutUs '
+import AboutUs from '../../components/AboutUs/AboutUs'
 import HomeProducts from '../../components/HomeProducts/HomeProducts'
 import MasonrySection from '../../components/CategoryShowcase/CategoryShowcase'
 import FeatureCard from '../../components/FeatureCard/FeatureCard'
