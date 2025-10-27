@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import { useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import Logo from '../../assets/LOGO.png'
 const Footer = () => {
+  const { categories = [], loading = true, error } = useSelector(state => state.categoriesState);
   return (
     <footer className="footer-bs">
       <Container>
@@ -12,21 +14,28 @@ const Footer = () => {
           <Col md={3} sm={12} className="footer-brand text-center text-md-start mb-4 mb-md-0">
             <img
               src={Logo}
-              alt="Eternica Beauty Logo"
+              alt="Eternica Beauty"
               className="footer-logo img-fluid"
             />
             <p className="footer-description mt-2">
-              Eternica offers premium massage oils, carrier oils, essential oils, and fragrance oils trusted by spas, wellness centers, and beauty professionals across the GCC and Middle East. Experience the highest quality oils for relaxation, therapy, and wellness.
+              Eternica Beauty is a trusted supplier of Doyen products and pure oils across the GCC and Middle East. We provide biodegradable and antibacterial gym wipes, Doyen dispensers, and high-quality line of carrier, essential, fragrance, and massage oils for spas, salons, and gyms fitness centers.
             </p>
           </Col>
           <Col md={3} sm={6} className="footer-nav">
             <h3>Products</h3>
             <ul>
-              <li><Link to="/Carrier-Base-Oils">Carrier & Base Oils</Link></li>
+              {categories && categories.map((category, catIndex) => {
+                return (
+                  <li key={catIndex}>
+                    <Link to={`/${category.slug}`}>{category.name}</Link>
+                  </li>
+                );
+              })}
+              {/* <li><Link to="/Carrier-Base-Oils">Carrier & Base Oils</Link></li>
               <li><Link to="/Essential-Oil">Essential Oil</Link></li>
               <li><Link to="/Fragrance-Oi">Fragrance Oil</Link></li>
               <li><Link to="/Masage-Oil">Masage Oil</Link></li>
-              <li><Link to="/Gym-Wipes">Gym Wipes</Link></li>
+              <li><Link to="/Gym-Wipes">Gym Wipes</Link></li> */}
             </ul>
           </Col>
           <Col md={3} sm={6} className="footer-nav">

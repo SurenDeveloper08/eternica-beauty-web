@@ -1,156 +1,164 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 import "./Product.css";
-import wipes1 from '../../assets/black.png'
-import wipes2 from '../../assets/blue.png'
+
 import ImageZoom from "../../components/ImageZoom/ImageZoom";
-import Oil from '../../assets/oil.png'
-import ProductDetailsTabs from "../../components/ProductDetailsTabs/ProductDetailsTabs";
 import HomeProducts from "../../components/HomeProducts/HomeProducts";
+import ProductDetailsTabs from "../../components/ProductDetailsTabs/ProductDetailsTabs";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-const product = {
-    id: "p1",
-    name: "Gym Wipes",
-    description:
-        "Eternica Gym Wipes are biodegradable, antibacterial, and designed for quick and hygienic cleaning of gym equipment. Gentle on hands, tough on germs, and safe for the environment.",
-    currency: "AED",
-    price: 49.99,
-    images: [
-        wipes1,
-        wipes2,
-    ],
+import { getProduct, getActiveCategoryProducts } from "../../redux/actions/productActions";
+import { addToCart } from "../../redux/slices/cartSlice";
+import Meta from "../../utils/Meta";
+const countryNames = {
+    AE: "United Arab Emirates",
+    SA: "Saudi Arabia",
+    KW: "Kuwait",
+    QA: "Qatar",
+    BH: "Bahrain",
+    OM: "Oman",
 };
 
-const relatedProducts = [
-    {
-        _id: "p1",
-        productName: "Herbal Massage Oil 250ml",
-        slug: "herbal-massage-oil-250ml",
-        brand: "NatureCare",
-        category: "massage-oils",
-        subCategory: "herbal-oils",
-        country: "uae",
-        price: 45,
-        productCurrency: "AED",
-        stock: 12,
-        image: Oil,
-    },
-    {
-        _id: "p2",
-        productName: "Luxury Spa Towel Pack",
-        slug: "luxury-spa-towel-pack",
-        brand: "SpaComfort",
-        category: "spa-accessories",
-        subCategory: "towels",
-        country: "uae",
-        price: 120,
-        productCurrency: "AED",
-        stock: 5,
-        image: Oil,
-    },
-    {
-        _id: "p3",
-        productName: "Electric Aroma Diffuser",
-        slug: "electric-aroma-diffuser",
-        brand: "RelaxTech",
-        category: "diffusers",
-        subCategory: "electric",
-        country: "uae",
-        price: 99,
-        productCurrency: "AED",
-        stock: 0,
-        image: Oil,
-    },
-    {
-        _id: "p3",
-        productName: "Electric Aroma Diffuser",
-        slug: "electric-aroma-diffuser",
-        brand: "RelaxTech",
-        category: "diffusers",
-        subCategory: "electric",
-        country: "uae",
-        price: 99,
-        productCurrency: "AED",
-        stock: 0,
-        image: Oil,
-    },
-    {
-        _id: "p3",
-        productName: "Electric Aroma Diffuser",
-        slug: "electric-aroma-diffuser",
-        brand: "RelaxTech",
-        category: "diffusers",
-        subCategory: "electric",
-        country: "uae",
-        price: 99,
-        productCurrency: "AED",
-        stock: 0,
-        image: Oil,
-    },
-    {
-        _id: "p3",
-        productName: "Electric Aroma Diffuser",
-        slug: "electric-aroma-diffuser",
-        brand: "RelaxTech",
-        category: "diffusers",
-        subCategory: "electric",
-        country: "uae",
-        price: 99,
-        productCurrency: "AED",
-        stock: 0,
-        image: Oil,
-    },
-];
-const Product = () => {
-    const [selectedImage, setSelectedImage] = useState(product.images[0]);
+const Product = ({ countryCode = "AE" }) => {
+
+    const { slug: productId } = useParams();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { product, loading, error } = useSelector((state) => state.productState);
+    const { products } = useSelector((state) => state.productsState);
+    const { cartItems } = useSelector((state) => state.cartState);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    useEffect(() => {
+        if (productId) dispatch(getProduct(productId));
+    }, [dispatch, productId]);
+
+    useEffect(() => {
+        dispatch(getActiveCategoryProducts(product.category, product.subCategory));
+    }, [dispatch, product]);
+
+    // Safe initialization once product is loaded
+    useEffect(() => {
+        if (product?.images?.length > 0) {
+            setSelectedImage(product.images[0].image);
+        }
+    }, [product]);
+
+    const handleAddToCart = (event) => {
+        const isAlreadyInCart = cartItems.some((item) => item._id === product._id);
+
+        if (isAlreadyInCart) {
+            navigate("/cart");
+            return;
+        }
+
+        dispatch(
+            addToCart({
+                _id: product._id,
+                productName: product.productName,
+                price: product.price,
+                qty: 1,
+                image: product.image || "",
+                currency: product.currency || "AED",
+                slug: product.slug,
+                category: product.category,
+                subCategory: product.subCategory,
+            })
+        );
+        toast.dismiss();
+        toast.success("Added to cart!", {
+            id: `main-cart-${product._id}`, // unique per product in main section
+        });
+    };
+
+    if (loading)
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{ height: "60vh" }}>
+                <p>Loading product...</p>
+            </div>
+        );
+
+    if (error)
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{ height: "60vh" }}>
+                <h4>Error loading product</h4>
+                <p>{error}</p>
+            </div>
+        );
+
+    if (!product) return null;
 
     return (
-        <div className="container">
-            <Breadcrumbs/>
-            <div className="product-page container">
-
-                <div className="gallery-section">
-                    <div className="main-image-wrapper">
-                        <ImageZoom src={selectedImage} alt={product.name} />
-                    </div>
-
-                    <div className="thumbs-wrapper">
-                        {product.images.map((img, i) => (
-                            <div
-                                key={i}
-                                className={`thumb ${selectedImage === img ? "active" : ""}`}
-                                onClick={() => setSelectedImage(img)}
-                            >
-                                <img src={img} alt={`thumb-${i}`} />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-   
-                <div className="info-section">
-                    <h2 className="product-title">{product.name}</h2>
-                    <p className="product-desc">{product.description}</p>
-
-                    <div className="product-price">
-                        <span>{product.currency} {product.price}</span>
-                    </div>
-
-                    <button className="add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-            <ProductDetailsTabs
-                description="This massage oil is made with 100% pure essential oils, crafted to relax your body and calm your mind."
-                specifications={[
-                    { label: "Volume", value: "500ml" },
-                    { label: "Ingredients", value: "Lavender, Jojoba, Vitamin E" },
-                    { label: "Made In", value: "UAE" },
-                ]}
+        <>
+            <Meta
+                title={product?.seo?.metaTitle || product?.productName}
+                description={product?.seo?.metaDescription || product?.description}
+                keywords={product?.seo?.metaKeywords || product?.productName}
+                canonical={product?.seo?.canonicalUrl}
             />
-            <section className='container pb-4'>
-                <HomeProducts title={'Customer Favorites'} products={relatedProducts} />
-            </section>
-        </div>
-    );
-}
+            <div className="container">
+                <Breadcrumbs />
 
-export default Product
+                <div className="product-page">
+                    {/* Gallery Section (Left) */}
+                    {product.images?.length > 0 && (
+                        <div className="gallery-section">
+                            <div className="main-image-wrapper">
+                                <ImageZoom
+                                    src={selectedImage || product.images[0].image}
+                                    alt={product.productName}
+                                />
+                            </div>
+
+                            <div className="thumbs-wrapper">
+                                {product.images.map((img, i) => (
+                                    <div
+                                        key={i}
+                                        className={`thumb ${selectedImage === img.image ? "active" : ""
+                                            }`}
+                                        onClick={() => setSelectedImage(img.image)}
+                                    >
+                                        <img src={img.image} alt={`thumb-${i}`} />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Info Section (Right) */}
+                    <div className="info-section">
+                        {product?.brand && (
+                            <p className="product-brand">by {product.brand}</p>
+                        )}
+                        <h2 className="product-title">{product.productName}</h2>
+                        <p className="product-desc">{product.description}</p>
+
+                        {Number(product?.price) > 0 && (
+                            <div className="product-price">
+                                <span>{product.currency || "AED"} {product.price}</span>
+                            </div>
+                        )}
+                        <button className="add-cart-btn" onClick={(e) => handleAddToCart(e)}>Add to Cart</button>
+                    </div>
+                </div>
+                <ProductDetailsTabs
+                    name={product.productName}
+                    countryNames={countryNames}
+                    countryCode={countryCode}
+                    cities={product.cities}
+                    features={product.features}
+                    specifications={product.specifications}
+                    whyChoose={product.whyChoose}
+                    careInstructions={product.careInstructions}
+                />
+                {/* Related Products */}
+                <section className="pb-5">
+                    <HomeProducts title="Related Products" products={products} />
+                </section>
+            </div>
+        </>
+    );
+};
+
+export default Product;

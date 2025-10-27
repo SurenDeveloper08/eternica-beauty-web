@@ -1,10 +1,11 @@
 import React from "react";
-import ReactImageMagnify from "react-image-magnify";
+// import ReactImageMagnify from "react-image-magnify";
+import { SideBySideMagnifier, GlassMagnifier } from "react-image-magnifiers";
 
 const ImageZoom = ({ src, alt }) => {
   return (
     <div style={{ maxWidth: "400px", margin: "0 auto" }}>
-      <ReactImageMagnify
+      {/* <ReactImageMagnify
         {...{
           smallImage: {
             alt: alt || "Product Image",
@@ -20,8 +21,7 @@ const ImageZoom = ({ src, alt }) => {
           largeImage: {
             src: src,
             width: 1200,
-            height: 1800,
-            
+            height: 1800,      
           },
           enlargedImageContainerStyle: {
               zIndex: 9999,
@@ -34,6 +34,17 @@ const ImageZoom = ({ src, alt }) => {
               height: "120%",
             },
         }}
+      /> */}
+
+      <GlassMagnifier
+        imageSrc={src}
+        largeImageSrc={src} // use a higher-resolution image here
+        magnifierSize="40%" // size of the magnifying lens
+        magnifierBorderSize={2}
+        magnifierBorderColor="rgba(0,0,0,0.3)"
+        square={false} // circular lens, set true for square
+        allowOverflow={true}
+        cursorStyle="zoom-in"
       />
     </div>
   );

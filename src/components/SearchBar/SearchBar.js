@@ -1,28 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { TextField, Autocomplete, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-
-const products = [
-  { label: "Carrier Oils and Base Oils", category: "Carrier-Oils", link: "Carrier-Oils" },
-  { label: "Gym Wipes", category: "Gym-Wipes", link: "Gym-Wipes" },
-  { label: "Dispenser", category: "Wipes", link: "Dispenser" },
-];
+import { getActiveSearchProducts } from '../../redux/actions/productActions';
+import debounce from 'lodash.debounce';
 
 const SearchBar = ({ width }) => {
   const [value, setValue] = useState(null);
   const [inputValue, setInputValue] = useState("");
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { searchResults, loading, error } = useSelector(state => state.productsState);
   const primaryColor = "#4C348C";
 
+  // Debounced search function to avoid too many calls
+  const debouncedSearch = React.useMemo(
+    () => debounce((query) => {
+    if (query && query.length >= 2) {
+        dispatch(getActiveSearchProducts(query));
+      }
+    }, 400),
+    [dispatch]
+  );
+
+  useEffect(() => {
+    if (inputValue === "") {
+      // Clear results or reset if needed
+      // You might want to dispatch an action to clear search results here
+      // dispatch(clearSearchResults());
+      return;
+    }
+    debouncedSearch(inputValue);
+
+    // Cleanup on unmount or inputValue change
+    return () => {
+      debouncedSearch.cancel();
+    };
+  }, [inputValue, debouncedSearch]);
+
+  // Navigate to product page or category when selecting an option
   const handleOptionSelect = (event, newValue) => {
+    
     setValue(newValue);
-    if (newValue && newValue.link) {
-      // navigate to product listing page
-      navigate(`/category/${newValue.link}`);
+    if (newValue) {
+      if (newValue.slug) {
+        navigate(`/${newValue.category}${newValue.subCategory ? `/${newValue.subCategory}` : ''}/${newValue.slug}`);
+      } else if (newValue.link) {
+        navigate(`/${newValue.category}${newValue.subCategory ? `/${newValue.subCategory}` : ''}`);
+      }
     }
   };
-
 
   return (
     <Autocomplete
@@ -30,8 +58,10 @@ const SearchBar = ({ width }) => {
       onChange={handleOptionSelect}
       inputValue={inputValue}
       onInputChange={(event, newInputValue) => setInputValue(newInputValue)}
-      options={products}
-      getOptionLabel={(option) => option.label}
+      options={searchResults || []}
+      getOptionLabel={(option) => option.productName || option.label || ""}
+      loading={loading}
+      noOptionsText={loading ? "Loading..." : "No products found"}
       sx={{ width }}
       renderInput={(params) => (
         <TextField
@@ -65,13 +95,9 @@ const SearchBar = ({ width }) => {
             ...params.InputProps,
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton type="submit" aria-label="search"
-                  onClick={() => {
-                    if (value && value.link) {
-                      navigate(`/${value.link}`);
-                    }
-                  }}
-                >
+                <IconButton 
+                // onClick={handleSearchClick} 
+                aria-label="search">
                   <SearchIcon />
                 </IconButton>
               </InputAdornment>

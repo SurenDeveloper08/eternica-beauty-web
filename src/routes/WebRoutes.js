@@ -15,23 +15,25 @@ import AboutUs from '../components/AboutUs/AboutUs';
 const WebsiteRoutes = () => {
 
     return (
-        <>
+        <div className="d-flex flex-column min-vh-100">
             <Header />
-            <Routes>
-                {/* Home page */}
-                <Route path="" element={<Home />} />
-                <Route path="category" element={<ProductListing />} />
-                <Route path=":category/:subCategory" element={<ProductListing />} />
-                <Route path="product/:slug" element={<Product />} />
-                <Route path="cart" element={<Cart />} />
-                <Route path="checkout" element={<Checkout />} />
-                <Route path="thank-you" element={<ThankYouPage />} />
-                <Route path="contact" element={<ContactUs />} />
-                <Route path="about" element={<AboutUs />} />
-            </Routes>
+            <main className="flex-grow-1">
+                <Routes>
+                    {/* Home page */}
+                    <Route path="" element={<Home />} />
+                    <Route path="category" element={<ProductListing />} />
+                    <Route path=":category/:subCategory" element={<ProductListing />} />
+                    <Route path="product/:slug" element={<Product />} />
+                    <Route path="cart" element={<Cart />} />
+                    <Route path="checkout" element={<Checkout />} />
+                    <Route path="thank-you" element={<ThankYouPage />} />
+                    <Route path="contact" element={<ContactUs />} />
+                    <Route path="about" element={<AboutUs />} />
+                </Routes>
+            </main>
             <Footer />
             <WhatsAppButton />
-        </>
+        </div>
     );
 };
 export default WebsiteRoutes;

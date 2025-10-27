@@ -1,50 +1,78 @@
-
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Helmet } from "react-helmet-async";
 import ProductCard from '../../components/PrductCard/ProductCard';
 import './ProductListing.css';
 import Banner from '../../assets/banner.png'
-import Oil from '../../assets/oil.png'
-import wipes1 from '../../assets/black.png'
-import wipes2 from '../../assets/blue.png'
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-const products = [
-  { id: 1, name: 'Lavender Oil', image: Oil },
-  { id: 2, name: 'Coconut Oil', image: wipes1 },
-  { id: 3, name: 'Rose Oil', image: 'https://example.com/rose.jpg' },
-  { id: 4, name: 'Peppermint Oil', image: wipes2 },
-  { id: 5, name: 'Jojoba Oil', image: 'https://example.com/jojoba.jpg' },
-  { id: 3, name: 'Rose Oil', image: 'https://example.com/rose.jpg' },
-  { id: 4, name: 'Peppermint Oil', image: wipes2 },
-  { id: 5, name: 'Jojoba Oil', image: Oil },
-];
+import { getActiveCategoryProducts } from '../../redux/actions/productActions'
+import Meta from "../../utils/Meta";
 
 const ProductListing = () => {
-  return (
-    <div className="product-listing-page">
-      <div className="banner-section">
-        <div className="banner-content text-center">
-          <h2 className="page-title">Essential Oils</h2>
-          <p className="page-description">
-            Discover our range of 100% pure essential oils, perfect for aromatherapy,
-            massage, and wellness.
-          </p>
-        </div>
-        <img
-          src={Banner}
-          alt="Essential Oils Banner"
-          className="banner-image"
-        />
-      </div>
+  const { category, subCategory } = useParams();
+  const dispatch = useDispatch();
+  const { products, meta, seo, loading, error } = useSelector((state) => state.productsState);
 
-      <div className="container my-5">
-        <Breadcrumbs />
-        <div className="product-grid">
-          {products && products.map((product) => (
-            <ProductCard key={product.id} image={product.image} name={product.name} />
-          ))}
+  useEffect(() => {
+    dispatch(getActiveCategoryProducts(category, subCategory));
+  }, [dispatch, category, subCategory]);
+
+
+  return (
+    <>
+     <Meta
+               title={seo?.metaTitle || meta?.category?.title}
+                description={seo?.metaDescription || meta?.description}
+                keywords={seo?.metaKeywords || meta?.category?.title}
+                canonical={seo?.canonicalUrl}
+            />
+    <div className="product-listing-page">
+      {loading && (
+        <div className="d-flex justify-content-center align-items-center" style={{ height: "60vh" }}>
+          <p>Loading products...</p>
         </div>
-      </div>
+      )}
+
+      {error && (
+        <div className="d-flex justify-content-center align-items-center" style={{ height: "60vh" }}>
+          <p>{error}</p>
+        </div>
+      )}
+
+      {!loading && !error && products && products.length > 0 ? (
+        <>
+          <div className="banner-section">
+            {meta && <div className="banner-content text-center">
+              <h2 className="page-title">{meta?.title}</h2>
+              <p className="page-description">
+               {meta?.description}
+              </p>
+            </div>}
+            <img
+              src={Banner}
+              alt="Essential Oils Banner"
+              className="banner-image"
+            />
+          </div>
+
+          <div className="container my-5">
+            <Breadcrumbs />
+            <div className="product-grid">
+              {products && products.map((product) => (
+                <ProductCard key={product._id} image={product.image} name={product.productName} category={product.category} subCategory={product.subCategory} slug={product.slug} product={product} />
+              ))}
+            </div>
+          </div>
+        </>
+      ) : null}
+      {!loading && !error && products && products.length === 0 && (
+        <div className="d-flex justify-content-center align-items-center" style={{ height: "60vh" }}>
+          <p>No products found in this category.</p>
+        </div>
+      )}
     </div>
+    </>
   );
 };
 

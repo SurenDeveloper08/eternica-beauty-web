@@ -1,0 +1,47 @@
+.table-dark {
+    --bs-table-bg: #f8f9fa !important;
+    --bs-table-color: rgb(0, 0, 0) !important;
+    border-color: #dee2e6;
+}
+
+.custom-table th,
+.custom-table td {
+    vertical-align: middle;
+}
+
+.cat-img {
+    width: auto;
+    height: 50px;
+    /* border-radius: 10px; */
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.cat-img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .category-table {
+        font-size: 0.85rem;
+    }
+
+    .cat-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
+
+.pagination {
+    margin-top: 1rem;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #4c348c;
+    border-color: #4c348c;
+}

@@ -5,7 +5,8 @@ import './FeatureCard.css';
 
 const FeatureCard = ({ features }) => {
     return (
-           <div className="feature-grid">
+        <div className='container'>
+            <div className="feature-grid">
                 {features && features.map((item, index) => (
                     <motion.div
                         key={item.id}
@@ -30,7 +31,8 @@ const FeatureCard = ({ features }) => {
                     </motion.div>
                 ))}
             </div>
-         );
+        </div>
+    );
 };
 
 export default FeatureCard;

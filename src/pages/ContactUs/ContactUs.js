@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import { FaPhoneAlt, FaEnvelopeOpenText, FaMapMarkedAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Meta from "../../utils/Meta";
 import './ContactUs.css'
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -54,172 +55,179 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-page py-5"
-    >
-      <Container>
-       <motion.div
-          className="text-center mb-5"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="fw-bold" style={{ color: "#4C348C" }}>
-            Contact Us
-          </h2>
-          <p className="text-muted">We’d love to hear from you. Reach out to us anytime.</p>
-        </motion.div>
+    <>
+      <Meta
+        title={"Contact - Eternica Beauty"}
+        description={"Contact Eternica Beauty for enquiry regarding high quality Doyen products, pure oils, and green beauty or fitness essentials in UAE and Middle East."}
+        keywords={"skincare, beauty, oils, wipes, dispensers"}
+        canonical="https://eternicabeauty.com/contact"
+      />
+      <div className="contact-page py-5"
+      >
+        <Container>
+          <motion.div
+            className="text-center mb-5"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="fw-bold" style={{ color: "#4C348C" }}>
+              Contact Us
+            </h2>
+            <p className="text-muted">We’d love to hear from you. Reach out to us anytime.</p>
+          </motion.div>
 
-         <Row className="mb-5 text-center g-4">
-          {[
-            {
-              icon: <FaPhoneAlt />,
-              title: "Call Us",
-              text: "+971 52 398 7292",
-            },
-            {
-              icon: <FaEnvelopeOpenText />,
-              title: "Email Us",
-              text: "Sales@eternicabeauty.com",
-            },
-            {
-              icon: <FaMapMarkedAlt />,
-              title: "Address",
-              text: "Eternica Beauty FZE, UAE",
-            },
-          ].map((item, idx) => (
-            <Col md={4} key={idx}>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.2 }}
-              >
-                <div className="p-4">
-                  <motion.div
-                    className="d-flex align-items-center justify-content-center mx-auto mb-3"
-                    style={{
-                      width: "70px",
-                      height: "70px",
-                      borderRadius: "50%",
-                      background: "#4C348C",
-                      color: "#fff",
-                      fontSize: "1.8rem",
-                    }}
-                    whileHover={{ scale: 1.15, rotate: 10 }}
-                    transition={{ type: "spring", stiffness: 200 }}
-                  >
-                    {item.icon}
-                  </motion.div>
-                  <h6 className="fw-bold" style={{ color: "#4C348C" }}>
-                    {item.title}
-                  </h6>
-                  <p className="mb-0 text-muted">{item.text}</p>
-                </div>
+          <Row className="mb-5 text-center g-4">
+            {[
+              {
+                icon: <FaPhoneAlt />,
+                title: "Call Us",
+                text: "+971 52 398 7292",
+              },
+              {
+                icon: <FaEnvelopeOpenText />,
+                title: "Email Us",
+                text: "Sales@eternicabeauty.com",
+              },
+              {
+                icon: <FaMapMarkedAlt />,
+                title: "Address",
+                text: "Eternica Beauty FZE, UAE",
+              },
+            ].map((item, idx) => (
+              <Col md={4} key={idx}>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.2 }}
+                >
+                  <div className="p-4">
+                    <motion.div
+                      className="d-flex align-items-center justify-content-center mx-auto mb-3"
+                      style={{
+                        width: "70px",
+                        height: "70px",
+                        borderRadius: "50%",
+                        background: "#4C348C",
+                        color: "#fff",
+                        fontSize: "1.8rem",
+                      }}
+                      whileHover={{ scale: 1.15, rotate: 10 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                    >
+                      {item.icon}
+                    </motion.div>
+                    <h6 className="fw-bold" style={{ color: "#4C348C" }}>
+                      {item.title}
+                    </h6>
+                    <p className="mb-0 text-muted">{item.text}</p>
+                  </div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+
+          <Row>
+            <Col className="mx-auto">
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>
+                <Card className="p-5 border-0" style={{ borderRadius: '0.325rem' }}>
+                  <Form onSubmit={handleSubmit}>
+                    <Row>
+                      <Col md={6}>
+                        <Form.Group className="mb-3">
+                          <Form.Label>Name</Form.Label>
+                          <Form.Control
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            style={{ borderColor: "#4C348C" }}
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col md={6}>
+                        <Form.Group className="mb-3">
+                          <Form.Label>Email</Form.Label>
+                          <Form.Control
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            style={{ borderColor: "#4C348C" }}
+                          />
+                        </Form.Group>
+                      </Col>
+                    </Row>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Phone</Form.Label>
+                      <Form.Control
+                        type="number"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        style={{ borderColor: "#4C348C" }}
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Subject</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="subject"
+                        placeholder="Enter your subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        style={{ borderColor: "#4C348C" }}
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Message</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={4}
+                        name="message"
+                        className="form-control"
+                        placeholder="Your message..."
+                        value={formData.message}
+                        onChange={handleChange}
+                        style={{ borderColor: "#4C348C", resize: "none" }}
+                        required
+                      />
+                    </Form.Group>
+
+                    {success && <p className="text-success">{success}</p>}
+                    {error && <p className="text-danger">{error}</p>}
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Button
+                        type="submit"
+                        className="w-100 text-white fw-bold"
+                        style={{
+                          background: "linear-gradient(135deg, #4C348C, #6a4fc1)",
+                          border: "none",
+                          borderRadius: "0.325rem",
+                          padding: "12px",
+                        }}
+                        disabled={loading}
+                      >
+                        {loading ? "Sending..." : "Send Message"}
+                      </Button>
+                    </motion.div>
+                  </Form>
+                </Card>
               </motion.div>
             </Col>
-          ))}
-        </Row>
-
-        <Row>
-          <Col className="mx-auto">
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>
-              <Card className="p-5 border-0" style={{ borderRadius: '0.325rem' }}>
-                <Form onSubmit={handleSubmit}>
-                  <Row>
-                    <Col md={6}>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="name"
-                          placeholder="Enter your name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          style={{ borderColor: "#4C348C" }}
-                        />
-                      </Form.Group>
-                    </Col>
-                    <Col md={6}>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control
-                          type="email"
-                          name="email"
-                          placeholder="Enter your email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          style={{ borderColor: "#4C348C" }}
-                        />
-                      </Form.Group>
-                    </Col>
-                  </Row>
-
-                  <Form.Group className="mb-3">
-                    <Form.Label>Phone</Form.Label>
-                    <Form.Control
-                      type="number"
-                      name="phone"
-                      placeholder="Enter your phone number"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      style={{ borderColor: "#4C348C" }}
-                    />
-                  </Form.Group>
-
-                  <Form.Group className="mb-3">
-                    <Form.Label>Subject</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="subject"
-                      placeholder="Enter your subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      style={{ borderColor: "#4C348C" }}
-                    />
-                  </Form.Group>
-
-                  <Form.Group className="mb-3">
-                    <Form.Label>Message</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      rows={4}
-                      name="message"
-                      className="form-control"
-                      placeholder="Your message..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      style={{ borderColor: "#4C348C", resize: "none" }}
-                      required
-                    />
-                  </Form.Group>
-
-                  {success && <p className="text-success">{success}</p>}
-                  {error && <p className="text-danger">{error}</p>}
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button
-                      type="submit"
-                      className="w-100 text-white fw-bold"
-                      style={{
-                        background: "linear-gradient(135deg, #4C348C, #6a4fc1)",
-                        border: "none",
-                        borderRadius: "0.325rem",
-                        padding: "12px",
-                      }}
-                      disabled={loading}
-                    >
-                      {loading ? "Sending..." : "Send Message"}
-                    </Button>
-                  </motion.div>
-                </Form>
-              </Card>
-            </motion.div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+          </Row>
+        </Container>
+      </div></>
   );
 };
 

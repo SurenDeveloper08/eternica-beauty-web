@@ -16,10 +16,10 @@ const categories = [
     title: "Oils",
     about: "Explore our premium oils for massage, aromatherapy, and daily self-care. Crafted to bring wellness and relaxation to your home.",
     subcategories: [
-      { title: "Carrier & Base Oils", about: "Carrier oils, also known as base oils, are gentle oils made from plants, nuts, or seeds. They are used to dilute strong essential oils and make them safe to apply on the skin. While essential oils are very concentrated, carrier oils are mild, moisturizing, and full of natural goodness.", image: CarrierImg },
-      { title: "Essential Oils", about: "Essential oils are the heart of aromatherapy. They’re natural extracts taken from plants, flowers, and herbs, carrying powerful scents and therapeutic benefits. These oils are widely used to support relaxation, boost energy, improve focus, and promote overall well-being for both body and mind.", image: EssentialImg },
-      { title: "Fragrance Oils", about: "Fragrance oils are an easy way to instantly change the feel of any space. Whether you want to create a calm, spa-like atmosphere, refresh a wellness center, or make a hospitality space more inviting, fragrance oils do the job beautifully. With their long-lasting and pleasant aromas, they set the right mood and leave a lasting impression.", image: FragranceImg },
-      { title: "Massage Oils", about: "Massage oils are natural or blended oils used during massages to provide smooth, gentle glide on the skin. They help the hands move easily, reduce friction, and make the massage experience more comfortable and effective.", image: MassageImg },
+      { title: "Carrier & Base Oils", about: "Carrier oils or base oils are gentle oils extracted from plants, nuts, or seeds. They are used to thin out concentrated essential oils and make them skin-safe. Essential oils are extremely potent, while carrier oils are soft, enriching, and full of natural goodness.", image: CarrierImg },
+      { title: "Essential Oils", about: "Essential oils are the basis of aromatherapy. They're extracts from plants, flowers, and herbs that possess potent scents and healing qualities. They're used most often to induce relaxation, energy, concentration, and good health for body and mind.", image: EssentialImg },
+      { title: "Fragrance Oils", about: "The most direct way of totally changing the atmosphere of any location in an instant is through fragrance oils. Whether to ease out a spa-like atmosphere, rejuvenate a wellness center, or create a hospitality zone friendly, fragrance oils are best suited for the task. With their enduring and fresh scents, they set the right mood and make an impression.", image: FragranceImg },
+      { title: "Massage Oils", about: "Massage oils are natural or blended oils used on the skin during massage to produce smooth, silky glide. Massage oils enable the ease of hands movement over the skin, reduce friction, and make massage more comfortable and effective.", image: MassageImg },
     ],
   },
   {
@@ -28,22 +28,22 @@ const categories = [
     subcategories: [
       {
         title: "Biodegradable Gym Wipes",
-        about: "These luxury biodegradable gym wipes are thick, soft, and durable, made from eco-friendly materials that naturally break down. They are antibacterial, quick-drying, and residue-free, safe for skin, and perfect for frequent use in gyms, studios, or home workouts.",
+        about: "These thick, soft, and durable high-quality biodegradable gym wipes are made of natural and biodegradable materials that will naturally disintegrate. They are antibacterial, dry instantly, and leave no residue, safe for use on the skin, and perfect for frequent use in gyms, studios, or at-home fitness.",
         image: LuxuryWipesImg,
       },
       {
         title: "Antibacterial Gym Wipes - Standard",
-        about: "Soft, quick-drying, and gentle on skin, these wipes effectively remove sweat, dirt, and germs from gym equipment, mats, and surfaces without leaving residue. Made from 100% viscose, alcohol-free, and lightly scented with fresh lemon, they are perfect for everyday use in gyms, studios, fitness centers, or at home.",
+        about: "Gentle on skin, soft, and fast-drying, these wipes wipe clean gym equipment, mats, and surfaces of sweat, dirt, and germs without residue. Made from 100% viscose, alcohol-free, and lightly scented with fresh lemon, these wipes are great to use daily in gyms, studios, fitness clubs, or at home.",
         image: StandardWipesImg,
       },
       {
         title: "Antibacterial Gym Wipes - Economy",
-        about: "Antibacterial Economy Wipes are an affordable and effective way to keep gyms, studios, and workout spaces clean. They quickly remove sweat, germs, and dirt from equipment and surfaces, drying fast without leaving residue. Soft, safe on skin, and easy to use, they’re perfect for daily cleaning and maintaining hygiene..",
+        about: "Antibacterial Economy Wipes are an inexpensive and effective way to keep gyms, studios, and exercise areas clean. They instantly eliminate sweat, bacteria, and dirt from equipment and surfaces and evaporate immediately without residue. Gentle on skin, gentle, and easy to use, they're perfect for daily cleaning and hygiene upkeep.",
         image: EconomyWipesImg,
       },
       {
         title: "Gym Wipes Dispenser",
-        about: "Keep your gym or workout area clean and safe with this simple-to-use Gym Wipes Dispenser. The pre-moistened wipes quickly remove germs, keeping equipment sanitized every day. The dispenser is durable, wall-mountable, and stylish, made from impact-resistant plastic with an easy-to-use silicone nozzle.",
+        about: "Keep a hygienic and secure gym or exercise area with this convenient-to-use Gym Wipes Dispenser. The pre-moistened wipes effortlessly remove germs, disinfecting equipment on a daily basis. The dispenser is sturdy, wall-mountable, and sleek, made of impact-resistant plastic with an easy-to-use silicone nozzle.",
         image: DispenserImg,
       },
     ],
@@ -118,7 +118,7 @@ const CategoryShowcaseCreative = () => {
                 }
 
                 return (
-                  <Col md={6} key={subIdx}>
+                  <Col md={6} key={subIdx} className="pb-2 pb-md-0">
                     <motion.div
                       initial={{ opacity: 0, x: subIdx % 2 === 0 ? -40 : 40 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -135,8 +135,8 @@ const CategoryShowcaseCreative = () => {
                         src={sub.image}
                         alt={sub.title}
                         // className="me-3"
-                        className="mb-3 mb-md-0 me-md-3 rounded-circle"
-                        style={{ width: "140px", height: "140px", borderRadius: "50%", objectFit: "cover" }}
+                        className="mb-3 mb-md-0 me-md-3"
+                        style={{ width: "140px", height: "140px", objectFit: "cover" }}
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       />

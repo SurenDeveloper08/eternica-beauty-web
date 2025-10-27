@@ -11,7 +11,6 @@ const Nav = () => {
     return (
         <nav className="navbar navbar-expand py-2" style={{ background: '#4C348C' }}>
             <div className="container d-flex justify-content-between align-items-center">
-
                <div className="d-flex flex-column flex-md-row">
                     <div className="d-flex align-items-center me-md-4 mb-1 mb-md-0">
                         <EmailIcon fontSize="small" className="me-1 text-light" />

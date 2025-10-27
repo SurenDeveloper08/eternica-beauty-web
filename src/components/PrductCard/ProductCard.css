@@ -1,5 +1,6 @@
 .product-card {
-    background: linear-gradient(180deg, #FEED9F, #FFFFFF);
+    /* background: linear-gradient(180deg, #FEED9F, #FFFFFF); */
+    background: #f8f8f8;
     border-radius: 10px;
     padding: 10px;
     transition: transform 0.3s;

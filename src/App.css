@@ -74,3 +74,43 @@ h6 {
   pointer-events: none;
   box-shadow: none;
 }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.form-check-input:checked {
+  background-color: #4c348c !important;
+  border: none;
+}
+
+.form-check-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #4c348c !important;
+}

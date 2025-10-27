@@ -1,0 +1,59 @@
+.dashboard-page {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 1rem;
+}
+
+/* Stat Card */
+.stat-card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  min-height: 120px;
+}
+
+.icon-wrapper {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-wrapper h5 {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.text-wrapper h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Chart/Info Section */
+.chart-section {
+  background: #f9f9fb;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .text-wrapper h3 {
+    font-size: 1.4rem;
+  }
+}

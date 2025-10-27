@@ -12,67 +12,28 @@ import img2 from '../../assets/sunflowr_oil.png'
 import img3 from '../../assets/essential_oil.png'
 import img4 from '../../assets/massage_oil.png'
 
-const CatSlider = ({ title, category }) => {
+const CatSlider = ({ title, categories=[] }) => {
    
-    const categories = [
-        {
-            id: 1,
-            title: "Carrier & Base Oils",
-            link: "/Carrier-Base-Oils",
-            image: img1,
-        },
-        {
-            id: 2,
-            title: "Essential Oils",
-            link: "/Essential-Oils",
-            image: img2,
-        },
-        {
-            id: 3,
-            title: "Fragrance Oils",
-            link: "/Fragrance-Oils",
-            image: img3,
-        },
-        {
-            id: 4,
-            title: "Massage Oils",
-            link: "/Massage-Oils",
-            image: img4,
-        },
-        {
-            id: 5,
-            title: "Gym Wipes",
-            link: "/Gym-Wipes",
-            image: gymwipes,
-        },
-        {
-            id: 6,
-            title: "Dispensers",
-            link: "/Dispensers",
-            image: dispenser,
-        },
-    ];
-
     return (
         <>
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <h4 className="fw-bold">{title}</h4>
             </div>
             <div className="row g-4 justify-content-center">
-                {categories.map((cat) => (
+                {categories && categories.map((cat) => (
                     <motion.div
-                        key={cat.id}
+                        key={cat._id}
                         className="col-6 col-md-4 col-lg-2 text-center"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.2, delay: cat.index * 0.1 }}
                         whileHover={{ scale: 1.05 }}
                     >
-                        <Link className="category-card text-center" to={cat.link} style={{ textDecoration: "none" }}>
+                        <Link className="category-card text-center" to={`/${cat?.category?.slug}/${cat?.slug}`} style={{ textDecoration: "none" }}>
                             <div className="category-img-wrapper mx-auto mb-3">
-                                <img src={cat.image} alt={cat.title} className="category-img" />
+                                <img src={cat.image} alt={cat.name} className="category-img" />
                             </div>
-                            <h6 className="category-title">{cat.title}</h6>
+                            <h6 className="category-title">{cat.name}</h6>
                         </Link>
                     </motion.div>
                 ))}

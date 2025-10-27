@@ -1,5 +1,15 @@
-.inner-image-zoom {
-  border-radius: 8px;
+.image-zoom-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
   background: #fff;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-zoom-wrapper img {
+  width: 100%;
+  object-fit: contain;
 }
