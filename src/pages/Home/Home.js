@@ -21,7 +21,7 @@ const Home = () => {
     const { categories = [], mainCategories, categoriesLoading = true, error: categoriesError } = useSelector(state => state.categoriesState);
     const { trendingProducts, favoritesProducts, error: highlightError, loading: highlightLoading } = useSelector(state => state.productsState);
     const dispatch = useDispatch();
-   
+
     useEffect(() => {
         dispatch(getSeoByPage('home'));
         dispatch(getActiveSliders());
@@ -39,8 +39,9 @@ const Home = () => {
                 keywords={seo?.metaKeywords || "skincare, beauty, oils, wipes, dispensers"}
                 canonical="https://eternicabeauty.com/"
             />
-
-            <HomeSlider sliders={sliders} />
+            <section className='custom-container'>
+                <HomeSlider sliders={sliders} />
+            </section>
             <section className='container py-5'>
                 <CatSlider title={'Explore Our Categories'} categories={mainCategories} />
             </section>

@@ -92,7 +92,7 @@ function App() {
     store.dispatch(loadUser(token))
   }, [token])
 
-  // useTokenExpiryCheck();
+  useTokenExpiryCheck();
   if (loading) {
     return (
       <div

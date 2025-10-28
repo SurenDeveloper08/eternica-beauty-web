@@ -28,35 +28,35 @@ const Order = () => {
     const [page, setPage] = useState(1);
     const perPage = 5;
 
-    useEffect(() => {
-        const mockOrders = [
-            {
-                id: "ORD001",
-                OrderId: "ORD001",
-                customer: "John Doe",
-                date: "2025-10-01",
-                total: "AED 120.00",
-                status: "Pending",
-            },
-            {
-                id: "ORD002",
-                OrderId: "ORD002",
-                customer: "Jane Smith",
-                date: "2025-10-03",
-                total: "",
-                status: "Completed",
-            },
-            {
-                id: "ORD003",
-                OrderId: "ORD003",
-                customer: "Mark Wilson",
-                date: "2025-10-05",
-                total: "AED 80.00",
-                status: "Cancelled",
-            },
-        ];
-        setOrders(mockOrders);
-    }, []);
+    // useEffect(() => {
+    //     const mockOrders = [
+    //         {
+    //             id: "ORD001",
+    //             OrderId: "ORD001",
+    //             customer: "John Doe",
+    //             date: "2025-10-01",
+    //             total: "AED 120.00",
+    //             status: "Pending",
+    //         },
+    //         {
+    //             id: "ORD002",
+    //             OrderId: "ORD002",
+    //             customer: "Jane Smith",
+    //             date: "2025-10-03",
+    //             total: "",
+    //             status: "Completed",
+    //         },
+    //         {
+    //             id: "ORD003",
+    //             OrderId: "ORD003",
+    //             customer: "Mark Wilson",
+    //             date: "2025-10-05",
+    //             total: "AED 80.00",
+    //             status: "Cancelled",
+    //         },
+    //     ];
+    //     setOrders(mockOrders);
+    // }, []);
 
     const filtered = orders.filter(
         (p) =>

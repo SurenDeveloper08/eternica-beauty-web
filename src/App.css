@@ -114,3 +114,24 @@ input[type=number] {
   box-shadow: none !important;
   border-color: #4c348c !important;
 }
+
+.custom-container {
+  padding: 0;
+  /* remove left/right padding */
+  margin: 0 auto;
+  /* optional: center */
+  max-width: 100%;
+  /* full width */
+}
+
+.custom-container {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .custom-container {
+    max-width: 1320px;
+  }
+}
