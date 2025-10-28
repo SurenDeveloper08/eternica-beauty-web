@@ -137,7 +137,6 @@ function App() {
                     <Route path="/:category" element={<ProductListing />} />
                     <Route path="/:category/:subCategory" element={<ProductListing />} />
                     <Route path="/:category/:subCategory/:slug" element={<Product />} />
-                    <Route path="/:category" element={<ProductListing />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/thank-you" element={<ThankYouPage />} />
