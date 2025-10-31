@@ -87,7 +87,7 @@ const ContactUs = () => {
               {
                 icon: <FaEnvelopeOpenText />,
                 title: "Email Us",
-                text: "Sales@eternicabeauty.com",
+                text: "sales@eternicabeauty.com",
               },
               {
                 icon: <FaMapMarkedAlt />,
