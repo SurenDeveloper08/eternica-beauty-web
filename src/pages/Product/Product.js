@@ -8,9 +8,10 @@ import ImageZoom from "../../components/ImageZoom/ImageZoom";
 import HomeProducts from "../../components/HomeProducts/HomeProducts";
 import ProductDetailsTabs from "../../components/ProductDetailsTabs/ProductDetailsTabs";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import { getProduct, getActiveCategoryProducts } from "../../redux/actions/productActions";
+import { getProduct, getActiveRelatedProducts } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/slices/cartSlice";
 import Meta from "../../utils/Meta";
+import Loader from "../../components/Loader/Loader";
 const countryNames = {
     AE: "United Arab Emirates",
     SA: "Saudi Arabia",
@@ -22,7 +23,7 @@ const countryNames = {
 
 const Product = ({ countryCode = "AE" }) => {
 
-    const { slug: productId } = useParams();
+    const { category: categoryId, subCategory: subCategoryId, slug: productId } = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { product, loading, error } = useSelector((state) => state.productState);
@@ -35,7 +36,7 @@ const Product = ({ countryCode = "AE" }) => {
     }, [dispatch, productId]);
 
     useEffect(() => {
-        dispatch(getActiveCategoryProducts(product.category, product.subCategory));
+        dispatch(getActiveRelatedProducts(categoryId, subCategoryId, productId));
     }, [dispatch, product]);
 
     // Safe initialization once product is loaded
@@ -74,9 +75,7 @@ const Product = ({ countryCode = "AE" }) => {
 
     if (loading)
         return (
-            <div className="d-flex justify-content-center align-items-center" style={{ height: "60vh" }}>
-                <p>Loading product...</p>
-            </div>
+            <Loader />
         );
 
     if (error)

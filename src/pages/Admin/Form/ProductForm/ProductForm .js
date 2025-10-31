@@ -15,7 +15,7 @@ const ProductForm = () => {
     const { id: productId } = useParams();
     const navigate = useNavigate();
     const { subCategories = [], categories = [] } = useSelector(state => state.categoriesState);
-    const { isProductCreated, isProductUpdated, product, error } = useSelector(state => state.productState);
+    const { isProductCreated, isProductUpdated, product, loading, error } = useSelector(state => state.productState);
     const dispatch = useDispatch();
     const [imagePreview, setImagePreview] = useState(null);
     const [removedGallery, setRemovedGallery] = useState([]);
@@ -404,8 +404,23 @@ const ProductForm = () => {
                             {/* Submit */}
                             <Col md={12} className="text-center mt-4">
                                 <motion.div whileHover={{ scale: 1.05 }}>
-                                    <Button type="submit" variant="success" className="px-5 py-2 fw-bold">
-                                        <CloudUpload className="me-2" /> {productId ? "Update Product" : "Add Product"}
+                                    <Button
+                                        type="submit"
+                                        variant="success"
+                                        className="px-5 py-2 fw-bold"
+                                        disabled={loading}
+                                    >
+                                        {loading ? (
+                                            <>
+                                                <span className="spinner-border spinner-border-sm me-2" role="status" />
+                                              {productId ? "Updating..." : "Saving..."}  
+                                            </>
+                                        ) : (
+                                            <>
+                                                <CloudUpload className="me-2" />
+                                               {productId ? "Update" : "Save"}
+                                            </>
+                                        )}
                                     </Button>
                                 </motion.div>
                             </Col>

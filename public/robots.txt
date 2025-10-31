@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+# Link to the sitemap
+Sitemap: https://api.eternicabeauty.com/sitemap.xml

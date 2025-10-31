@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { motion } from "framer-motion";
-import { getAdminPage } from "../../redux/actions/pageActions";
-import Meta from "../../utils/Meta";
 import './AboutUs.css'
-const AboutUs = () => {
-    const dispatch = useDispatch();
-    const { page: about, error, loading } = useSelector(state => state.pageState);
+const AboutUs = ({about}) => {
 
-    useEffect(() => {
-        dispatch(getAdminPage('about'));
-    }, [dispatch]);
     return (
         <>
             {about &&

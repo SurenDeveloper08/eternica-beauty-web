@@ -197,8 +197,23 @@ const CategoryForm = () => {
 
                             <Col md={12} className="text-center mt-4">
                                 <motion.div whileHover={{ scale: 1.05 }}>
-                                    <Button type="submit" variant="success" className="px-5 py-2 fw-bold" disabled={loading}>
-                                        <CloudUpload className="me-2" /> {CategoryId ? "Update Category" : "Add Category"}
+                                    <Button
+                                        type="submit"
+                                        variant="success"
+                                        className="px-5 py-2 fw-bold"
+                                        disabled={loading}
+                                    >
+                                        {loading ? (
+                                            <>
+                                                <span className="spinner-border spinner-border-sm me-2" role="status" />
+                                                {CategoryId ? "Updating..." : "Saving..."}
+                                            </>
+                                        ) : (
+                                            <>
+                                                <CloudUpload className="me-2" />
+                                                {CategoryId ? "Update" : "Save"}
+                                            </>
+                                        )}
                                     </Button>
                                 </motion.div>
                             </Col>

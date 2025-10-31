@@ -16,7 +16,7 @@ const SliderForm = () => {
     const [preview, setPreview] = useState(null);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { isSliderCreated, isSliderUpdated, slider, error } = useSelector(state => state.sliderState);
+    const { isSliderCreated, isSliderUpdated, slider, loading, error } = useSelector(state => state.sliderState);
 
     const [initialValues, setInitialValues] = useState({
         name: "",
@@ -261,9 +261,19 @@ const SliderForm = () => {
                                         type="submit"
                                         variant="success"
                                         className="px-5 py-2 fw-bold"
+                                        disabled={loading}
                                     >
-                                        <CloudUpload className="me-2" />
-                                        {id ? "Update Slider" : "Upload Slider"}
+                                        {loading ? (
+                                            <>
+                                                <span className="spinner-border spinner-border-sm me-2" role="status" />
+                                                {id ? "Updating..." : "Saving..."}
+                                            </>
+                                        ) : (
+                                            <>
+                                                <CloudUpload className="me-2" />
+                                                {id ? "Update" : "Save"}
+                                            </>
+                                        )}
                                     </Button>
                                 </motion.div>
                             </Col>

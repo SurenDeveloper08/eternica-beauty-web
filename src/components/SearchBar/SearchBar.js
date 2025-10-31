@@ -5,7 +5,7 @@ import { TextField, Autocomplete, InputAdornment, IconButton } from "@mui/materi
 import SearchIcon from "@mui/icons-material/Search";
 import { getActiveSearchProducts } from '../../redux/actions/productActions';
 import debounce from 'lodash.debounce';
-
+import Loader from '../Loader/Loader';
 const SearchBar = ({ width }) => {
   const [value, setValue] = useState(null);
   const [inputValue, setInputValue] = useState("");
@@ -61,7 +61,7 @@ const SearchBar = ({ width }) => {
       options={searchResults || []}
       getOptionLabel={(option) => option.productName || option.label || ""}
       loading={loading}
-      noOptionsText={loading ? "Loading..." : "No products found"}
+      noOptionsText={loading ? <Loader/> : "No products found"}
       sx={{ width }}
       renderInput={(params) => (
         <TextField

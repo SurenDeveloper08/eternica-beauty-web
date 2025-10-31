@@ -56,6 +56,7 @@ import HomeForm from './pages/Admin/Form/HomeForm/HomeForm.js';
 import ProtectedRoute from './components/route/ProtectedRoute.js';
 import store from './store';
 import { loadUser } from './redux/actions/userActions.js';
+import Loader from './components/Loader/Loader.js';
 const theme = createTheme({
   typography: {
     fontFamily: "Montserrat, Arial, sans-serif",
@@ -95,19 +96,8 @@ function App() {
   useTokenExpiryCheck();
   if (loading) {
     return (
-      <div
-        style={{
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "18px",
-          fontWeight: "500",
-        }}
-      >
-        Loading...
-      </div>
-    );
+      <Loader/>
+     );
   }
   return (
     <HelmetProvider>

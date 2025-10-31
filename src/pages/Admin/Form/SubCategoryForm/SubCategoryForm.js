@@ -317,9 +317,19 @@ const SubCategoryForm = () => {
                                         type="submit"
                                         variant="success"
                                         className="px-5 py-2 fw-bold"
+                                        disabled={loading}
                                     >
-                                        <CloudUpload className="me-2" />
-                                        {CategoryId ? "Update SubCategory" : "Add SubCategory"}
+                                        {loading ? (
+                                            <>
+                                                <span className="spinner-border spinner-border-sm me-2" role="status" />
+                                                {CategoryId ? "Updating..." : "Saving..."}
+                                            </>
+                                        ) : (
+                                            <>
+                                                <CloudUpload className="me-2" />
+                                                {CategoryId ? "Update" : "Save"}
+                                            </>
+                                        )}
                                     </Button>
                                 </motion.div>
                             </Col>

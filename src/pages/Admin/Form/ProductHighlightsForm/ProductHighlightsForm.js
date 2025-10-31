@@ -18,10 +18,10 @@ const ProductHighlightsForm = () => {
   const { id: productId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isProductCreated, isProductUpdated, product, error } = useSelector(state => state.productState);
+  const { isProductCreated, isProductUpdated, product, loading, error } = useSelector(state => state.productState);
   const { products } = useSelector(state => state.productsState);
 
-   const [initialValues, setInitialValues] = useState({
+  const [initialValues, setInitialValues] = useState({
     productId: "",
     category: "",
     sortOrder: "",
@@ -45,13 +45,13 @@ const ProductHighlightsForm = () => {
 
   useEffect(() => {
     if (productId) {
-     dispatch(getAdminProductHighlight(productId))
+      dispatch(getAdminProductHighlight(productId))
     }
   }, [productId])
 
   useEffect(() => {
     if (productId && product?._id === productId) {
-    
+
       setInitialValues({
         productId: product.productId._id || "",
         category: product.category || "",
@@ -192,9 +192,23 @@ const ProductHighlightsForm = () => {
 
               <Col md={12} className="text-center mt-3">
                 <motion.div whileHover={{ scale: 1.05 }}>
-                  <Button type="submit" variant="success" className="px-4 py-2 fw-bold">
-                    <CloudUpload className="me-2" />{" "}
-                    {productId ? "Update Highlight" : "Save Highlight"}
+                  <Button
+                    type="submit"
+                    variant="success"
+                    className="px-5 py-2 fw-bold"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <>
+                        <span className="spinner-border spinner-border-sm me-2" role="status" />
+                        {productId ? "Updating..." : "Saving..."}
+                      </>
+                    ) : (
+                      <>
+                        <CloudUpload className="me-2" />
+                        {productId ? "Update" : "Save"}
+                      </>
+                    )}
                   </Button>
                 </motion.div>
               </Col>

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
 import { createNewPage, getAdminPage, updatePage } from "../../../../redux/actions/pageActions";
 import { clearError, clearPageCreated, clearPageUpdated } from "../../../../redux/slices/pageSlice";
+import SubmitButton from "../../../../components/SubmitButton/SubmitButton";
 
 const AboutUsForm = () => {
     const [preview, setPreview] = useState(null);

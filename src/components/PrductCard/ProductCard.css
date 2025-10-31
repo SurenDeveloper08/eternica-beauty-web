@@ -29,4 +29,16 @@
     font-weight: 500;
     font-size: 0.95rem;
     margin: 0;
+    display: -webkit-box;
+    /* required for line-clamp */
+    -webkit-line-clamp: 2;
+    /* show 2 lines max */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* hide extra text */
+    text-overflow: ellipsis;
+    /* add ... if overflow */
+    min-height: 2.4em;
+    /* ensures 2 lines height even if text is short */
+    line-height: 1.2em;
 }

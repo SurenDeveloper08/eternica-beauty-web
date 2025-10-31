@@ -266,3 +266,24 @@ export const getActiveSearchProducts = (query) => async (dispatch) => {
     }
 
 }
+
+//user
+export const getActiveRelatedProducts = (category, subCategory, slug) => async (dispatch) => {
+    let query = [];
+    if (category) query.push(`category=${encodeURIComponent(category)}`);
+    if (subCategory) query.push(`subcategory=${encodeURIComponent(subCategory)}`);
+    if (slug) query.push(`slug=${encodeURIComponent(slug)}`);
+
+    const queryString = query.length ? `?${query.join('&')}` : '';
+
+    try {
+        dispatch(productsRequest())
+        const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/products/by-category${queryString}`);
+        dispatch(productsSuccess(data))
+    } catch (error) {
+        const message =
+            error?.response?.data?.message || error.message || "Something went wrong";
+        dispatch(productsFail(message))
+    }
+
+}
